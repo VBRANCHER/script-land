@@ -32,7 +32,7 @@ function select($pQuery){
 
 function php_insert($pQuery){
 	
-	$conexao = mysqli_connect("localhost", "root", "root", "senai_teste");
+	$conexao = mysqli_connect("localhost", "root", "root", "bd_scriptland");
 	
 	$dados = mysqli_query($conexao, $pQuery) or die("Erro ao usar seu INSERT");
 	
@@ -44,7 +44,7 @@ function php_insert($pQuery){
 
 function sql_delete_update($pQuery){
 	
-	$conexao = mysqli_connect("localhost", "root", "root", "senai_teste");
+	$conexao = mysqli_connect("localhost", "root", "root", "bd_scriptland");
 	
 	$dados = mysqli_query ($conexao, $pQuery) or die ("Erro ao deletar");
 	
