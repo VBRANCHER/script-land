@@ -1,0 +1,76 @@
+Lógica de programação
+
+1 - O que é fluxograma?
+
+Representação de um procedimento ou sistema no qual as etapas são ilustrados por meio de símbolos geométricos conectados entre si.
+
+2 - Qual a diferença entre Java e JavaScript?
+
+Java é uma linguagem de programação desktop enquanto JavaScript é uma linguagem de programação web.
+
+3 - Qual a importancia de se fazer um fluxograma?
+
+Organização
+
+4 - Qual dessas linguagens é a mais recente?
+
+-Python
+
+-Ruby 
+
+-C# (Correto)
+
+-C
+
+5 - O que é uma variável?  
+
+É um objeto capaz de guardar um valor, seja numérico ou texto, que se perde se o programa for fechado.
+
+=========================================================================================================
+
+Programação Web
+
+1 - A tag <title> deve ser colocada em qual parte do HTML?
+
+<head>
+
+2 - O que a sigla CSS significa?
+
+Cascading Style Sheets 
+
+3 - O HTML depende de qual linguagem para fazer lógica com variáveis?
+
+JavaScript
+
+4 - Este input de senha no HTML não está escondendo o que é digitado, por quê?: <input type="text" id="senha" placeholder="Digite sua senha..."/>
+
+Por que o tipo do campo está como "text"
+
+5 - O que a sigla HTML significa?
+
+Hypertext Markup Language
+
+=========================================================================================================
+
+Introdução a Computação 
+
+1 - O que significa a sigla USB?
+
+a)Unique Serial Bus
+b)Universal Serial Bus (Correto)
+c)Unit serial booster
+d)Universal series buzz
+
+2 - Qual destes não é um periférico?
+
+Google Chrome
+
+3 - Qual destes é um Software?
+
+NotePad++
+
+4 - A que se refere a palavra Gabinete?
+
+Compartimento que contém as placas do computador.
+
+
