@@ -16,7 +16,7 @@ class lugar_legal extends Phaser.Scene {
 		this.load.image('cerca_grande_horizontal', 'assets/cerca_grande_horizontal.png');
 		this.load.image('Savepoint', 'assets/Savepoint.png');
 		this.load.image('para_loja', 'assets/para_loja.png');
-		this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 42 });
+		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 22, frameHeight: 31 });
 	}
 
 	create ()
@@ -24,7 +24,7 @@ class lugar_legal extends Phaser.Scene {
 	
 		this.add.image(640, 360, 'lugar_legal');
 		
-		this.player = this.physics.add.sprite(100, 170, 'dude');
+		this.player = this.physics.add.sprite(100, 170, 'protagonista_2');
 		
 		this.player.setBounce(0);
 		this.player.setCollideWorldBounds(true);
@@ -66,20 +66,20 @@ class lugar_legal extends Phaser.Scene {
 		
 		this.anims.create({
 			key: 'left',
-			frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 3 }),
+			frames: this.anims.generateFrameNumbers('protagonista_2', { start: 0, end: 3 }),
 			frameRate: 10,
 			repeat: -1
 		});
 
 		this.anims.create({
 			key: 'turn',
-			frames: [ { key: 'dude', frame: 4 } ],
+			frames: [ { key: 'protagonista_2', frame: 4 } ],
 			frameRate: 20
 		});
 
 		this.anims.create({
 			key: 'right',
-			frames: this.anims.generateFrameNumbers('dude', { start: 5, end: 8 }),
+			frames: this.anims.generateFrameNumbers('protagonista_2', { start: 5, end: 8 }),
 			frameRate: 10,
 			repeat: -1
 		});
