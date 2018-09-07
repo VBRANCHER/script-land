@@ -1,6 +1,14 @@
+<?php
+
+include_once("includes/Cadastro.php");
+include_once("includes/verifica_login.php");
+
+?>
+
+
 <html>
 <head>
-
+	
 	<title>Cadastro de usuário</title>
 	
 	<link rel="stylesheet" type="text/css "href="css/bootstrap/bootstrap.css"/>
@@ -28,7 +36,7 @@
 	
 		<h1 class="h3 mb-3 font-weight-normal" style="color:#ffffff"> Cadastrar </h1>
 	
-		<form class="form-signin" method="post" action="index.php">
+		<form class="form-signin" method="post" action="cadastro.php">
 	
 			<input type="email" name="email" class="form-control" placeholder="E-mail"  required autofocus>
 
