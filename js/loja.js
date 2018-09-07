@@ -136,7 +136,7 @@ class loja extends Phaser.Scene {
 	
 	interagirVilao(player, npc){
 		
-		player.setPosition(670,100);
+		player.setPosition(900,275);
 		game.scene.switch('loja','Teste');
 		
 	}
