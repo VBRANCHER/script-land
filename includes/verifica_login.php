@@ -12,7 +12,7 @@ if(isset($_SESSION["arrUsuario"])){
 		
 	}else{
 		
-		header("location:home.php");
+		header("location:index11.php");
 		
 	}
 	
