@@ -2,7 +2,6 @@
 
 session_start();
 
-include_once("includes/Cadastro.php");
 include_once("includes/verifica_login.php");
 include_once("includes/login.php"); 
 
@@ -29,7 +28,7 @@ function openCadastro(){
 	
 	function openPassword(){
 	
-	document.location.href = "esqueciSenha.html";
+	document.location.href = "esqueciSenha.php";
 	
 	}
 	
