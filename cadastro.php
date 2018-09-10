@@ -38,13 +38,13 @@ include_once("includes/verifica_login.php");
 	
 		<form class="form-signin" method="post" action="cadastro.php">
 	
-			<input type="email" name="email" class="form-control" placeholder="E-mail"  required autofocus>
+			<input type="email" name="email" class="form-withoutborder" placeholder="E-mail"  required autofocus>
 
-			<input type="text" name="name" class="form-control" placeholder="Nome de Usuário"  required>
+			<input type="text" name="name" class="form-withoutborder" placeholder="Nome de Usuário"  required>
 
-			<input type="password" name="senha" class="form-control" style="margin-bottom:0px" placeholder="Senha"  required>
+			<input type="password" name="senha" class="form-withoutborder" style="margin-bottom:0px" placeholder="Senha"  required>
 
-			<input type="password" name="senha" class="form-control" placeholder="Confirmar senha"  required>
+			<input type="password" name="senha" class="form-withoutborder" placeholder="Confirmar senha"  required>
 	
 	
 			<button type="submit" class="btn btn-lg btn-outline-success btn-block"> Cadastrar </button> 

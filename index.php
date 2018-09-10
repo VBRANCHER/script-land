@@ -46,10 +46,15 @@ function openCadastro(){
 <form class="form-signin" method="post" action="index.php">
 
     <h1 class="h3 mb-3 font-weight-normal" style="color:white">Logar</h1>
-    <input type="email" id="inputEmail" name="email" class="form-control" placeholder="E-mail" required autofocus>
-    <input type="password" id="inputPassword" name="senha" class="form-control" placeholder="Senha" required>
+	
+    <input type="email" id="inputEmail" name="email" class="form-withoutborder" placeholder="E-mail" required autofocus>
+	
+    <input type="password" id="inputPassword" name="senha" class="form-withoutborder" placeholder="Senha" required>
+	
     <button class="btn btn-lg btn-outline-success btn-block" type="submit">Entrar</button>
+	
 	<button onclick="openCadastro()" class="btn btn-lg btn-outline-info btn-block" type="button">Cadastrar</button>
+	
 	<button onclick="openPassword()" class="btn btn-lg btn-outline-danger btn-block" type="button">Esqueci minha senha</button>
 	
 </form>
