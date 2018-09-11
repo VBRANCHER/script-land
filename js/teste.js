@@ -21,7 +21,7 @@ class teste extends Phaser.Scene {
 
 	create ()
 	{
-		this.timedEvent = this.time.delayedCall(5000, this.gameOver, this.updateCounter, this);
+		this.timedEvent = this.time.delayedCall(15000, this.gameOver, this.updateCounter, this);
 
 		this.add.image(640, 360, 'pergunta');
 		
@@ -31,31 +31,28 @@ class teste extends Phaser.Scene {
 		
 		this.add.image(1100, 500, 'Vilão1');
 		
-		this.startBtn = this.add.sprite(505, 596, 'buttonA').setInteractive();
-		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste','game_over'); });
+		this.startBtn = this.add.sprite(506, 596, 'buttonA').setInteractive();
+		this.startBtn.on('pointerdown', function (event) {game.scene.switch('Teste','game_over'); });
 
-		this.startBtn = this.add.sprite(505, 676, 'buttonB').setInteractive();
-		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste','game_over'); });
+		this.startBtn = this.add.sprite(506, 674, 'buttonB').setInteractive();
+		this.startBtn.on('pointerdown', function (event) {game.scene.switch('Teste','game_over'); });
 
-		this.startBtn = this.add.sprite(782, 596, 'buttonC').setInteractive();
-		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste','loja'); });
+		this.startBtn = this.add.sprite(785, 596, 'buttonC').setInteractive();
+		this.startBtn.on('pointerdown', function (event) {game.scene.switch('Teste','loja'); });
 
-		this.startBtn = this.add.sprite(790, 673, 'buttonD').setInteractive();
-		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste','loja'); });
+		this.startBtn = this.add.sprite(790, 674, 'buttonD').setInteractive();
+		this.startBtn.on('pointerdown', function (event) {game.scene.switch('Teste','game_over'); });
 		
 	}
 
 	updateCounter() 
 	{
 		total++;
-		
-
-		
 	}
 	update ()
 	{	
 		this.tempo.setText(' ' + this.timedEvent.getProgress().toString().substr(0,1));
-		
+	
 	}
 
 	gameOver(){
