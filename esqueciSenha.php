@@ -25,7 +25,7 @@ function openHome(){
 
 <img class="mb-4" src="imgs/LogoFinal.png" alt="" height="72">
 
-<form class="form-signin" method="post" action="index.html">
+<form class="form-signin" method="post" action="index.php">
 
     <h1 class="h3 mb-3 font-weight-normal" style="color:white">Recuperação de senha</h1>
 	<h1 class="h3 mb-3 font-weight-normal" style="color:white">Para que você possa recuperar a sua senha digite o seu endereço de E-mail</h1>

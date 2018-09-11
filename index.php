@@ -2,8 +2,8 @@
 
 session_start();
 
-include_once("includes/verifica_login.php");
-include_once("includes/login.php"); 
+include_once("includes/login.php");
+include_once("includes/verifica_login.php"); 
 
 ?>
 
@@ -20,15 +20,15 @@ include_once("includes/login.php");
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 
 <script>
-function openCadastro(){
+	function openCadastro(){
 	
-	document.location.href = "cadastro.php";
+		document.location.href = "cadastro.php";
 	
 	}
 	
 	function openPassword(){
 	
-	document.location.href = "esqueciSenha.php";
+		document.location.href = "esqueciSenha.php";
 	
 	}
 	
@@ -46,9 +46,9 @@ function openCadastro(){
 
     <h1 class="h3 mb-3 font-weight-normal" style="color:white">Logar</h1>
 	
-    <input type="email" id="inputEmail" name="email" class="form-withoutborder" placeholder="E-mail" required autofocus>
+    <input type="email" id="inputEmail" name="inputEmail" class="form-withoutborder" placeholder="E-mail" required autofocus>
 	
-    <input type="password" id="inputPassword" name="senha" class="form-withoutborder" placeholder="Senha" required>
+    <input type="password" id="inputPassword" name="inputPassword" class="form-withoutborder" placeholder="Senha" required>
 	
     <button class="btn btn-lg btn-outline-success btn-block" type="submit">Entrar</button>
 	
