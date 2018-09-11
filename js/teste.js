@@ -31,9 +31,17 @@ class teste extends Phaser.Scene {
 		
 		this.add.image(1100, 500, 'Vilão1');
 		
-		
-		
-		document.getElementById("divPergunta").style.visibility = "visible";
+		this.startBtn = this.add.sprite(505, 596, 'buttonA').setInteractive();
+		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste','game_over'); });
+
+		this.startBtn = this.add.sprite(505, 676, 'buttonB').setInteractive();
+		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste','game_over'); });
+
+		this.startBtn = this.add.sprite(782, 596, 'buttonC').setInteractive();
+		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste','loja'); });
+
+		this.startBtn = this.add.sprite(790, 673, 'buttonD').setInteractive();
+		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste','loja'); });
 		
 	}
 
