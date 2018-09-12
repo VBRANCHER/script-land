@@ -3,9 +3,7 @@ class teste extends Phaser.Scene {
 	{
 		super({key: 'Teste'});
 		var gameOver = false;
-		var tempo;
-		var timedEvent;
-		var total = 0; 
+		
 	}
 	
 	preload ()
@@ -21,11 +19,8 @@ class teste extends Phaser.Scene {
 
 	create ()
 	{
-		this.timedEvent = this.time.delayedCall(15000, this.gameOver, this.updateCounter, this);
 
 		this.add.image(640, 360, 'pergunta');
-		
-		this.tempo = this.add.text(500,76);
 
 		this.add.image(180, 500, 'Protagonista2');
 		
@@ -44,14 +39,10 @@ class teste extends Phaser.Scene {
 		this.startBtn.on('pointerdown', function (event) {game.scene.switch('Teste','game_over'); });
 		
 	}
-
-	updateCounter() 
-	{
-		total++;
-	}
+	
 	update ()
 	{	
-		this.tempo.setText(' ' + this.timedEvent.getProgress().toString().substr(0,1));
+		
 	
 	}
 

@@ -57,7 +57,7 @@ class loja_dentro extends Phaser.Scene {
 		this.physics.add.collider(this.player, this.lojinha_hitbox3);
 		
 		//  The score
-		this.scoreText = this.add.text(970, 9, '0', { fontSize: '32px', fill: '#fff' });
+		//this.scoreText = this.add.text(970, 9, '0', { fontSize: '32px', fill: '#fff' });
 		
 		this.physics.add.overlap(this.player, this.sair_loja, this.sairLoja, null, this);
 		

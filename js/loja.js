@@ -39,7 +39,7 @@ class loja extends Phaser.Scene {
 		this.player.setCollideWorldBounds(true);
 
 		 //  The score
-		this.scoreText = this.add.text(970, 9, '0', { fontSize: '32px', fill: '#fff' });
+		//this.scoreText = this.add.text(970, 9, '0', { fontSize: '32px', fill: '#fff' });
 		
 		// Criar a loja como objeto com colisão estático
 		this.loja = this.physics.add.staticGroup();
