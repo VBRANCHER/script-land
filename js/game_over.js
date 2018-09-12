@@ -22,7 +22,7 @@ class game_over extends Phaser.Scene {
 		this.startBtn.on('pointerdown', function (event) {game.scene.switch('game_over','Teste'); });
 		
 		this.startBtn = this.add.sprite(790, 396, 'sair').setInteractive();
-		this.startBtn.on('pointerdown', function (event) {game.scene.switch('game_over','login'); });
+		this.startBtn.on('pointerdown', function (event) {game.scene.switch('game_over','selecionaPersonagem'); });
 		
 	}
 	update ()
