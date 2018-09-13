@@ -12,6 +12,8 @@ include_once("includes/verifica_login.php");
 
 <title>Login do usuário</title>
 
+<link rel="shortcut icon" href="imgs/icone.ico" type="image/x-icon"/>
+
 <link rel="stylesheet" type="text/css "href="css/bootstrap/bootstrap.css"/>
 <link rel="stylesheet" type="text/css "href="css/signin.css"/>
 
