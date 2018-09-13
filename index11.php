@@ -99,7 +99,7 @@ var config = {
         }
     },
 	
-	scene: [selecionaPersonagem, tutorial, loja, spawn, teste, loja_dentro, game_over, salvar, lugar_legal]
+	scene: [selecionaPersonagem, tutorial, loja, spawn, teste, teste2, teste3, loja_dentro, game_over, salvar, lugar_legal]
 };
 var game = new Phaser.Game(config);
 game.scene.start(selecionaPersonagem);
