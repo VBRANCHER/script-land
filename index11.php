@@ -18,6 +18,8 @@
 	<script src="js/loja.js"></script>
 	<script src="js/login.js"></script>
     <script src="js/teste.js"></script>
+    <script src="js/teste2.js"></script>
+    <script src="js/teste3.js"></script>
     <script src="js/spawn.js"></script>
 	<script src="js/tutorial.js"></script>
 	<script src="js/salvar.js"></script>
