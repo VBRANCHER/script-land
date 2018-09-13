@@ -36,77 +36,8 @@
 			margin-top: 65px;
 			display: block;
 		}
-.button {
-    background-color: #FFFFF0;
-    border: 5px solid black;
-    color: black;
-    padding: 15px 25px;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-	width: 280px;
-	height: 73px;
-}
 
-.button:hover {
-    background-color: silver;
-}
-
-.button2 {
-    background-color: #FFFFF0;
-    border: 5px solid black;
-    color: black;
-    padding: 15px 25px;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-	width: 277px;
-	height: 67px;
-}
-
-.button2:hover {
-    background-color: silver;
-}
-
-.button3 {
-    background-color: #FFFFF0;
-    border: 5px solid black;
-    color: black;
-    padding: 15px 25px;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-	width: 278px;
-	height: 82px;
-}
-
-.button3:hover {
-    background-color: silver;
-}
-
-.button4 {
-    background-color: #FFFFF0;
-    border: 5px solid black;
-    color: black;
-    padding: 15px 25px;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-	width: 278px;
-	height: 79px;
-}
-
-.button4:hover {
-    background-color: silver;
-}
-
-#divPergunta {
-    margin-top: 471px;
-	margin-left:527px;
-    position: absolute;
-	visibility: hidden;
-}
-</style>
+	</style>
 
 	<script>
 	
@@ -165,42 +96,13 @@ var config = {
         }
     },
 	
-	scene: [selecionaPersonagem,tutorial, login, loja, teste, spawn, loja_dentro, game_over, salvar, esqueci_senha, lugar_legal]
+	scene: [selecionaPersonagem, tutorial, login, loja, spawn, teste, loja_dentro, game_over, salvar, esqueci_senha, lugar_legal]
 };
 var game = new Phaser.Game(config);
 game.scene.start(selecionaPersonagem);
 
-function clickGameOver(){
-
-	game.scene.switch('Teste','game_over');
-	
-	document.getElementById("divPergunta").style.visibility = "hidden";
-	
-
-}
-
-function clickCorreto(){
-
-	game.scene.switch('Teste','loja');
-	
-	document.getElementById("divPergunta").style.visibility = "hidden";
-	
-}
 </script>
 
 
-<div id="divPergunta">
-<center><h2>Em java "FOR" Pode ser utilizado como:</h2></center>
-<br>
-
-<button class="button" onclick="clickGameOver()">Não existe em java</button>
-<button class="button2" onclick="clickGameOver()">Serve para fazer uma decisão dependendo do valor recebido</button>
-<br>
-<button class="button3" onclick="clickCorreto()">Serve para uma repetição</button>
-<button class="button4" onclick="clickGameOver()">Enfeitar o código</button>
-
-
-
-</div>
 </body>
 </html>
