@@ -59,21 +59,24 @@
 
 <div style="position: absolute">
 
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-<ul class="navbar-nav mr-auto">
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Menu
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light" style="background-color: #d7d6d6 !important">
+ <a class="navbar-brand" href="#">
+          <img src="imgs/icone.png" height="50px" alt="">
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Opção desativada</a>
-          <a class="dropdown-item" href="#">Opção desativada</a>
-          <div class="dropdown-divider"></div>
-          <button class="dropdown-item" onClick="telaLogin()">Sair</a>
-        </div>
-      </li>
+
+  <div class="collapse navbar-collapse" id="navbarNav" >
+<ul class="navbar-nav mr-auto">
+       
+			<li class="nav-item">
+			    <a class="nav-link" href="#">Opção desativada</a>
+				</li>
+				<li class="nav-item">
+          <a class="nav-link" href="#">Opção desativada</a>
+         </li>
+
+
     </ul>
+	<button class="btn btn-outline-danger my-2 my-sm-0"  onClick="telaLogin()">Sair</a>
   </div>
 </nav>
 
