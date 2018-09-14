@@ -50,8 +50,9 @@ class teste2 extends Phaser.Scene {
 		testeObj2.vidas--; 
         testeObj2.vidasText.setText('Vidas: ' + this.vidas);
 		
-		if (testeObj.vidas < 0){
+		if (testeObj2.vidas < 0){
 			this.vidas = 3;
+			testeObj2.vidasText.setText('Vidas: ' + this.vidas);
 			game.scene.switch('teste2','game_over');
 		}
     }
