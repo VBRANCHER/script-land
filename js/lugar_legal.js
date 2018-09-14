@@ -37,7 +37,7 @@ class lugar_legal extends Phaser.Scene {
 		
 		
 		// The score
-		this.scoreText = this.add.text(970, 9, '0', { fontSize: '32px', fill: '#fff' });
+		//this.scoreText = this.add.text(970, 9, '0', { fontSize: '32px', fill: '#fff' });
 		
 		// Cercas
 		
