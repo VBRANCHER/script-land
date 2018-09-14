@@ -16,6 +16,7 @@
     <script src="js/phaser.min.js"></script>
 	<script src="js/lugar_legal.js"></script>
 	<script src="js/loja.js"></script>
+	<script src="js/vitoria.js"></script>
     <script src="js/teste.js"></script>
     <script src="js/teste2.js"></script>
     <script src="js/teste3.js"></script>
@@ -103,7 +104,7 @@ var config = {
         }
     },
 	
-	scene: [selecionaPersonagem, tutorial, loja, spawn, testeObj, testeObj2, testeObj3, loja_dentro, game_over, salvar, lugar_legal]
+	scene: [selecionaPersonagem, tutorial, loja, spawn, testeObj, testeObj2, testeObj3, vitoria, loja_dentro, game_over, salvar, lugar_legal]
 };
 var game = new Phaser.Game(config);
 game.scene.start(selecionaPersonagem);
