@@ -3,7 +3,7 @@ class teste2 extends Phaser.Scene {
 	{
 		super({key: 'teste2'});
 		var gameOver = false;
-		
+		this.vidas = 3;
 	}
 	
 	preload ()
@@ -20,7 +20,7 @@ class teste2 extends Phaser.Scene {
 
 	create ()
 	{
-
+		
         this.add.image(640, 360, 'pergunta');
         
         this.add.image(650, 510, 'problema2');
@@ -29,19 +29,32 @@ class teste2 extends Phaser.Scene {
 		
 		this.add.image(1100, 500, 'Vilão1');
 		
+		this.vidasText = this.add.text(10, 48, 'Vidas: ' + this.vidas, { font: '32px Arial', fill: '#000000' });
+		
 		this.startBtn = this.add.sprite(506, 596, 'buttonA2').setInteractive();
 		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste2','teste3'); });
 
 		this.startBtn = this.add.sprite(506, 674, 'buttonB2').setInteractive();
-		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste2','game_over'); });
+		this.startBtn.on('pointerdown', function (event) { testeObj2.updateVidas();});
 
 		this.startBtn = this.add.sprite(785, 596, 'buttonC2').setInteractive();
-		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste2','game_over'); });
+		this.startBtn.on('pointerdown', function (event) { testeObj2.updateVidas();});
 
 		this.startBtn = this.add.sprite(790, 674, 'buttonD2').setInteractive();
-		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste2','game_over'); });
+		this.startBtn.on('pointerdown', function (event) { testeObj2.updateVidas();});
 		
 	}
+	
+	updateVidas ()
+    {	
+		testeObj2.vidas--; 
+        testeObj2.vidasText.setText('Vidas: ' + this.vidas);
+		
+		if (testeObj.vidas < 0){
+			this.vidas = 3;
+			game.scene.switch('teste2','game_over');
+		}
+    }
 	
 	update ()
 	{	
@@ -49,7 +62,4 @@ class teste2 extends Phaser.Scene {
 	
 	}
 
-	gameOver(){
-		game.scene.switch('Teste','game_over');
-	}
 }

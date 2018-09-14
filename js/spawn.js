@@ -14,7 +14,7 @@ class spawn extends Phaser.Scene {
 		this.load.image('spawn', 'assets/spawn.png');
 		this.load.image('hitbox_spawn1', 'assets/hitbox_spawn1.png');
 		this.load.image('hitbox_spawn2', 'assets/hitbox_spawn2.png');
-		this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 42 });
+		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 22, frameHeight: 31 });
 		
 	}
 	
@@ -23,7 +23,7 @@ class spawn extends Phaser.Scene {
 	
 		this.add.image(640, 360, 'spawn');
  			
-		this.player = this.physics.add.sprite(665, 490, 'dude');
+		this.player = this.physics.add.sprite(665, 490, 'protagonista_2');
 		this.player.setBounce(0);
 		this.player.setCollideWorldBounds(true);
 		this.player.setPosition(1000,150);

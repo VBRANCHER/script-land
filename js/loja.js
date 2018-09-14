@@ -24,7 +24,7 @@ class loja extends Phaser.Scene {
 		this.load.image('loja', 'assets/loja.png');
 		this.load.image('para_lugar_legal', 'assets/para_lugar_legal.png');
 		this.load.image('npc', 'assets/npc.png');
-		this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 42 });
+		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 22, frameHeight: 31 });
 	}
 
 	create ()
@@ -33,7 +33,7 @@ class loja extends Phaser.Scene {
 		this.add.image(640, 360, 'centro');
 		
 		
-		this.player = this.physics.add.sprite(100, 470, 'dude');
+		this.player = this.physics.add.sprite(100, 470, 'protagonista_2');
 		
 		this.player.setBounce(0);
 		this.player.setCollideWorldBounds(true);

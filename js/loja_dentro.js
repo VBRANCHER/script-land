@@ -15,8 +15,7 @@ class loja_dentro extends Phaser.Scene {
 		this.load.image('lojinha_hitbox2', 'assets/lojinha_hitbox2.png');
 		this.load.image('lojinha_hitbox3', 'assets/lojinha_hitbox3.png');
 		this.load.image('sair_loja', 'assets/sair_loja.png');
-		this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 42 });
-		
+		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 22, frameHeight: 31 });
 	}
 
 	create ()
@@ -27,7 +26,7 @@ class loja_dentro extends Phaser.Scene {
 		this.sair_loja = this.physics.add.staticGroup();
 		this.sair_loja.create(574, 565, 'sair_loja');
 		
-		this.player = this.physics.add.sprite(665, 490, 'dude');
+		this.player = this.physics.add.sprite(665, 490, 'protagonista_2');
 		this.player.setBounce(0);
 		this.player.setCollideWorldBounds(true);
 		this.player.setPosition(665,490);
