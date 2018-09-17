@@ -16,7 +16,7 @@ class lugar_legal extends Phaser.Scene {
 		this.load.image('cerca_grande_horizontal', 'assets/cerca_grande_horizontal.png');
 		this.load.image('Savepoint', 'assets/Savepoint.png');
 		this.load.image('para_loja', 'assets/para_loja.png');
-		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 22, frameHeight: 31 });
+		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 44, frameHeight: 62 });
 	}
 
 	create ()

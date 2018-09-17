@@ -24,7 +24,7 @@ class loja extends Phaser.Scene {
 		this.load.image('loja', 'assets/loja.png');
 		this.load.image('para_lugar_legal', 'assets/para_lugar_legal.png');
 		this.load.image('npc', 'assets/npc.png');
-		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 22, frameHeight: 31 });
+		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 44, frameHeight: 62 });
 	}
 
 	create ()
@@ -143,7 +143,7 @@ class loja extends Phaser.Scene {
 	
 	entrarLugar_legal(player, para_lugar_legal) {
 		
-		player.setPosition(50,500);
+		player.setPosition(50,490);
 		game.scene.switch('loja','lugar_legal');
 		
 	}
