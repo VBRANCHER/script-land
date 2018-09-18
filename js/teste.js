@@ -2,8 +2,7 @@ class teste extends Phaser.Scene {
 	constructor ()
 	{
 		super({key: 'Teste'});
-		var gameOver = false;
-		this.vidas = 3;
+		var gameOver = false;		
 	}
 	
 	preload ()
@@ -29,7 +28,7 @@ class teste extends Phaser.Scene {
 		
 		this.add.image(1100, 500, 'Vilão1');
 		
-		this.vidasText = this.add.text(10, 48, 'Vidas: ' + this.vidas, { font: '32px Arial', fill: '#000000' });
+		this.vidasText = this.add.text(10, 48, 'Vidas: ' + vidasRestantes, { font: '32px Arial', fill: '#000000' });
 		
 		this.startBtn = this.add.sprite(506, 596, 'buttonA').setInteractive();
 		this.startBtn.on('pointerdown', function (event) {testeObj.updateVidas();});
@@ -38,7 +37,7 @@ class teste extends Phaser.Scene {
 		this.startBtn.on('pointerdown', function (event) {testeObj.updateVidas();});
 
 		this.startBtn = this.add.sprite(785, 596, 'buttonC').setInteractive();
-		this.startBtn.on('pointerdown', function (event) {game.scene.switch('Teste','teste2'); });
+		this.startBtn.on('pointerdown', function (event) {game.scene.switch('Teste','teste2');});
 
 		this.startBtn = this.add.sprite(790, 674, 'buttonD').setInteractive();
 		this.startBtn.on('pointerdown', function (event) { testeObj.updateVidas();});
@@ -49,12 +48,12 @@ class teste extends Phaser.Scene {
 	
 	updateVidas ()
     {	
-		testeObj.vidas--; 
-        testeObj.vidasText.setText('Vidas: ' + this.vidas);
+		vidasRestantes--; 
+        testeObj.vidasText.setText('Vidas: ' + vidasRestantes);
 		
-		if (testeObj.vidas < 0){
-			this.vidas = 3;
-			testeObj.vidasText.setText('Vidas: ' + this.vidas);
+		if (vidasRestantes < 0){
+			vidasRestantes = 3;
+			testeObj.vidasText.setText('Vidas: ' + vidasRestantes);
 			game.scene.switch('Teste','game_over');
 		}
     }

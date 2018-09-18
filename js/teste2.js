@@ -3,7 +3,6 @@ class teste2 extends Phaser.Scene {
 	{
 		super({key: 'teste2'});
 		var gameOver = false;
-		this.vidas = 3;
 	}
 	
 	preload ()
@@ -29,10 +28,10 @@ class teste2 extends Phaser.Scene {
 		
 		this.add.image(1100, 500, 'Vilão1');
 		
-		this.vidasText = this.add.text(10, 48, 'Vidas: ' + this.vidas, { font: '32px Arial', fill: '#000000' });
+		this.vidasText = this.add.text(10, 48, 'Vidas: ' + vidasRestantes, { font: '32px Arial', fill: '#000000' });
 		
 		this.startBtn = this.add.sprite(506, 596, 'buttonA2').setInteractive();
-		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste2','teste3'); });
+		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste2','teste3');});
 
 		this.startBtn = this.add.sprite(506, 674, 'buttonB2').setInteractive();
 		this.startBtn.on('pointerdown', function (event) { testeObj2.updateVidas();});
@@ -47,13 +46,13 @@ class teste2 extends Phaser.Scene {
 	
 	updateVidas ()
     {	
-		testeObj2.vidas--; 
-        testeObj2.vidasText.setText('Vidas: ' + this.vidas);
+		vidasRestantes--; 
+        testeObj2.vidasText.setText('Vidas: ' + vidasRestantes);
 		
-		if (testeObj2.vidas < 0){
-			this.vidas = 3;
-			testeObj2.vidasText.setText('Vidas: ' + this.vidas);
-			game.scene.switch('teste2','game_over');
+		if (vidasRestantes < 0){
+			vidasRestantes = 3;
+			testeObj2.vidasText.setText('Vidas: ' + vidasRestantes);
+			game.scene.switch('Teste','game_over');
 		}
     }
 	
