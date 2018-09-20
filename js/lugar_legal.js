@@ -11,10 +11,10 @@ class lugar_legal extends Phaser.Scene {
 	preload ()
 	{
 		this.load.image('lugar_legal', 'assets/lugar_legal.png');
+		this.load.image('arvore1', 'assets/arvore1.png');
 		this.load.image('hitbox_cerca_horizontal', 'assets/hitbox_cerca_horizontal.png');
 		this.load.image('hitbox_cerca_vertical', 'assets/hitbox_cerca_vertical.png');
 		this.load.image('cerca_grande_horizontal', 'assets/cerca_grande_horizontal.png');
-		this.load.image('Savepoint', 'assets/Savepoint.png');
 		this.load.image('para_loja', 'assets/para_loja.png');
 		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 44, frameHeight: 62 });
 	}
@@ -28,13 +28,6 @@ class lugar_legal extends Phaser.Scene {
 		
 		this.player.setBounce(0);
 		this.player.setCollideWorldBounds(true);
-		
-		// Savepoint
-		
-		this.Savepoint = this.physics.add.staticGroup();
-		this.Savepoint = this.physics.add.sprite(1110, 380, 'Savepoint');
-		this.physics.add.overlap(this.player, this.Savepoint, this.Save, null, this);
-		
 		
 		// The score
 		//this.scoreText = this.add.text(970, 9, '0', { fontSize: '32px', fill: '#fff' });
@@ -52,15 +45,19 @@ class lugar_legal extends Phaser.Scene {
 		this.hitbox_cerca_horizontal.create(1350, 450, 'hitbox_cerca_horizontal');
 		
 		this.hitbox_cerca_vertical.create(888, 180, 'hitbox_cerca_vertical');
-		this.hitbox_cerca_vertical.create(661, 480, 'hitbox_cerca_vertical');
+		this.hitbox_cerca_vertical.create(661, 530, 'hitbox_cerca_vertical');
 		
 		this.cerca_grande_horizontal.create(133, 259, 'cerca_grande_horizontal');
 		this.cerca_grande_horizontal.create(473, 259, 'cerca_grande_horizontal');
 		this.cerca_grande_horizontal.create(812, 636, 'cerca_grande_horizontal');
 		this.cerca_grande_horizontal.create(1114, 636, 'cerca_grande_horizontal');
-				
+		
+		
 		this.physics.add.collider(this.player, this.hitbox_cerca_horizontal);
 		this.physics.add.collider(this.player, this.hitbox_cerca_vertical);
+		
+		this.arvore1 = this.physics.add.staticGroup();
+		this.arvore1.create(455, 430, 'arvore1');
 		
 		// Animações do jogador
 		
@@ -99,15 +96,11 @@ class lugar_legal extends Phaser.Scene {
 		
 	}
 	
-	Save(player, Savepoint){
-		player.setPosition(1110,580);
-		game.scene.switch('lugar_legal','salvar');
-	}
-	
 	paraLoja(player, para_loja) {
 		player.setPosition(1220,543);
 		game.scene.switch('lugar_legal','loja');
 	}
+	
 	update ()
 	{	
 		if (this.cursors.left.isDown)
