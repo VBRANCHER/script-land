@@ -87,11 +87,12 @@
 
 <script type="text/javascript">
 
+var jean = 0;
 var testeObj = new teste();
 var testeObj2 = new teste2();
 var testeObj3 = new teste3();
+var lojaObj = new loja();
 var vidasRestantes = 3;
-
 
 var config = {
     type: Phaser.AUTO,
