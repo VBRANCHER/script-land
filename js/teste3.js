@@ -40,7 +40,7 @@ class teste3 extends Phaser.Scene {
 		this.startBtn.on('pointerdown', function (event) { testeObj3.updateVidas();});
 
 		this.startBtn = this.add.sprite(790, 674, 'buttonD3').setInteractive();
-		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste3','vitoria');});
+		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste3','vitoria'); jean = 1;});
 		
 	}
 	
@@ -52,7 +52,7 @@ class teste3 extends Phaser.Scene {
 		if (vidasRestantes < 0){
 			vidasRestantes = 3;
 			testeObj3.vidasText.setText('Vidas: ' + vidasRestantes);
-			game.scene.switch('Teste','game_over');
+			game.scene.switch('teste3','game_over');
 		}
     }
 	

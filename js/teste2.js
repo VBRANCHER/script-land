@@ -52,7 +52,7 @@ class teste2 extends Phaser.Scene {
 		if (vidasRestantes < 0){
 			vidasRestantes = 3;
 			testeObj2.vidasText.setText('Vidas: ' + vidasRestantes);
-			game.scene.switch('Teste','game_over');
+			game.scene.switch('teste2','game_over');
 		}
     }
 	

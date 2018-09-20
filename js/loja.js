@@ -5,9 +5,9 @@ class loja extends Phaser.Scene {
 		var player;
 		var cursors;
 		var loja;
-		var npc;
 		var gameOver = false;
 		var score = 0;
+		var npc;
 	}
 	
 	preload ()
@@ -29,9 +29,10 @@ class loja extends Phaser.Scene {
 
 	create ()
 	{
+		debugger;
+		
 
 		this.add.image(640, 360, 'centro');
-		
 		
 		this.player = this.physics.add.sprite(100, 470, 'protagonista_2');
 		
@@ -103,7 +104,7 @@ class loja extends Phaser.Scene {
 		this.npc = this.physics.add.sprite(900, 160, 'npc');
 		
 		this.physics.add.overlap(this.player, this.npc, this.interagirVilao, null, this);
-		
+
 		// Animações do jogador
 		this.anims.create({
 			key: 'left',
@@ -134,11 +135,18 @@ class loja extends Phaser.Scene {
 		
 	}
 	
+	verificaVilao(){
+		debugger;
+		if (jean == 1){
+			this.npc.setVisible(false);
+		}
+	}
+
 	interagirVilao(player, npc){
-		
-		player.setPosition(900,275);
-		game.scene.switch('loja','Teste');
-		
+		if (jean == 0){
+			player.setPosition(900,275);
+			game.scene.switch('loja','Teste');
+		}
 	}
 	
 	entrarLugar_legal(player, para_lugar_legal) {
