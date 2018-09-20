@@ -8,7 +8,7 @@
 
 
 <?php
-include_once("includes/banco_de_dados.php");
+include_once("/../includes/banco_de_dados.php");
 	/*
 	$arrayProdutos = select("SELECT * FROM usuarios as u 
 	INNER JOIN usuario_personagem as p ON(u.idusuario=p.idusuario) ");
@@ -23,17 +23,6 @@ include_once("includes/banco_de_dados.php");
 	*/
 
 	
-
-$arrayUsuarios = select("SELECT * FROM usuarios");
-
-if(isset($_POST['nNome'])){
-	sql_delete_update("UPDATE usuarios SET nome='{$_POST['nNome']}' WHERE idusuario='{$_POST['aNome']}'");
-}
-
-if(isset($_POST['nEmail'])){
-	sql_delete_update("UPDATE usuarios SET email='{$_POST['nEmail']}' WHERE idusuario='{$_POST['aNome']}'");
-}
-
 
 echo "<table border='1'>";
 echo "<tr>";
