@@ -17,6 +17,7 @@ class lugar_legal extends Phaser.Scene {
 		this.load.image('Savepoint', 'assets/Savepoint.png');
 		this.load.image('para_loja', 'assets/para_loja.png');
 		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 44, frameHeight: 62 });
+		this.load.image('arvore1', 'assets/arvore1.png');
 	}
 
 	create ()
@@ -34,7 +35,6 @@ class lugar_legal extends Phaser.Scene {
 		this.Savepoint = this.physics.add.staticGroup();
 		this.Savepoint = this.physics.add.sprite(1110, 380, 'Savepoint');
 		this.physics.add.overlap(this.player, this.Savepoint, this.Save, null, this);
-		
 		
 		// The score
 		//this.scoreText = this.add.text(970, 9, '0', { fontSize: '32px', fill: '#fff' });
@@ -61,6 +61,12 @@ class lugar_legal extends Phaser.Scene {
 				
 		this.physics.add.collider(this.player, this.hitbox_cerca_horizontal);
 		this.physics.add.collider(this.player, this.hitbox_cerca_vertical);
+		
+		// arvore do fundo
+		
+		this.arvore1 = this.physics.add.staticGroup();
+		
+		this.arvore1.create(500, 400, 'arvore1');
 		
 		// Animações do jogador
 		
@@ -107,6 +113,7 @@ class lugar_legal extends Phaser.Scene {
 	paraLoja(player, para_loja) {
 		player.setPosition(1220,543);
 		game.scene.switch('lugar_legal','loja');
+		lojaObj.verificaVilao();
 	}
 	update ()
 	{	
