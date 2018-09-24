@@ -29,9 +29,6 @@ class loja extends Phaser.Scene {
 
 	create ()
 	{
-		debugger;
-		
-
 		this.add.image(640, 360, 'centro');
 		
 		this.player = this.physics.add.sprite(100, 470, 'protagonista_2');
@@ -135,12 +132,6 @@ class loja extends Phaser.Scene {
 		
 	}
 	
-	verificaVilao(){
-		debugger;
-		if (jean == 1){
-			this.npc.setVisible(false);
-		}
-	}
 
 	interagirVilao(player, npc){
 		if (jean == 0){
@@ -172,6 +163,11 @@ class loja extends Phaser.Scene {
 	
 	update ()
 	{	
+	
+		if (jean == 1){
+			lojaObj.npc.setVisible(false);
+		}
+		
 		if (this.cursors.left.isDown)
 		{
 			this.player.setVelocityX(-200);

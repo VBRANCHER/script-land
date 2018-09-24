@@ -107,7 +107,6 @@ class lugar_legal extends Phaser.Scene {
 	paraLoja(player, para_loja) {
 		player.setPosition(1220,543);
 		game.scene.switch('lugar_legal','loja');
-		lojaObj.verificaVilao();
 	}
 	update ()
 	{	
