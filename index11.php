@@ -92,6 +92,7 @@ var testeObj = new teste();
 var testeObj2 = new teste2();
 var testeObj3 = new teste3();
 var lojaObj = new loja();
+var lugar_legalObj = new lugar_legal();
 var vidasRestantes = 3;
 
 var config = {
@@ -107,7 +108,7 @@ var config = {
         }
     },
 	
-	scene: [selecionaPersonagem, tutorial, loja, spawn, testeObj, testeObj2, testeObj3, vitoria, loja_dentro, game_over, salvar, lugar_legal]
+	scene: [selecionaPersonagem, tutorial, lojaObj, spawn, testeObj, testeObj2, testeObj3, vitoria, loja_dentro, game_over, salvar, lugar_legalObj]
 };
 var game = new Phaser.Game(config);
 game.scene.start(selecionaPersonagem);
