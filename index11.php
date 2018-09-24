@@ -17,9 +17,10 @@
 	<script src="js/lugar_legal.js"></script>
 	<script src="js/loja.js"></script>
 	<script src="js/vitoria.js"></script>
-    <script src="js/teste.js"></script>
-    <script src="js/teste2.js"></script>
-    <script src="js/teste3.js"></script>
+    <script src="js/perguntas/teste.js"></script>
+    <script src="js/perguntas/teste2.js"></script>
+    <script src="js/perguntas/teste3.js"></script>
+	<script src="js/perguntas/teste4.js"></script>
     <script src="js/spawn.js"></script>
 	<script src="js/tutorial.js"></script>
 	<script src="js/salvar.js"></script>
@@ -88,6 +89,7 @@
 <script type="text/javascript">
 
 var jean = 0;
+var juju = 0;
 var testeObj = new teste();
 var testeObj2 = new teste2();
 var testeObj3 = new teste3();
@@ -108,7 +110,7 @@ var config = {
         }
     },
 	
-	scene: [selecionaPersonagem, tutorial, lojaObj, spawn, testeObj, testeObj2, testeObj3, vitoria, loja_dentro, game_over, salvar, lugar_legalObj]
+	scene: [selecionaPersonagem, tutorial, lojaObj, spawn, testeObj, testeObj2, testeObj3, vitoria, loja_dentro, game_over, salvar, lugar_legalObj, teste4]
 };
 var game = new Phaser.Game(config);
 game.scene.start(selecionaPersonagem);
