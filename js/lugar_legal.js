@@ -14,10 +14,10 @@ class lugar_legal extends Phaser.Scene {
 		this.load.image('hitbox_cerca_horizontal', 'assets/hitbox_cerca_horizontal.png');
 		this.load.image('hitbox_cerca_vertical', 'assets/hitbox_cerca_vertical.png');
 		this.load.image('cerca_grande_horizontal', 'assets/cerca_grande_horizontal.png');
-		this.load.image('Savepoint', 'assets/Savepoint.png');
 		this.load.image('para_loja', 'assets/para_loja.png');
 		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 44, frameHeight: 62 });
 		this.load.image('arvore1', 'assets/arvore1.png');
+	    this.load.image('arvore_bonita_2', 'assets/arvore_bonita_2.png');
 	}
 
 	create ()
@@ -29,12 +29,6 @@ class lugar_legal extends Phaser.Scene {
 		
 		this.player.setBounce(0);
 		this.player.setCollideWorldBounds(true);
-		
-		// Savepoint
-		
-		this.Savepoint = this.physics.add.staticGroup();
-		this.Savepoint = this.physics.add.sprite(1110, 380, 'Savepoint');
-		this.physics.add.overlap(this.player, this.Savepoint, this.Save, null, this);
 		
 		// The score
 		//this.scoreText = this.add.text(970, 9, '0', { fontSize: '32px', fill: '#fff' });
@@ -67,6 +61,10 @@ class lugar_legal extends Phaser.Scene {
 		this.arvore1 = this.physics.add.staticGroup();
 		
 		this.arvore1.create(500, 400, 'arvore1');
+		
+		this.arvore_bonita_2 = this.physics.add.staticGroup();
+		
+		this.arvore_bonita_2.create(1125, 200, 'arvore_bonita_2');
 		
 		// Animações do jogador
 		
@@ -103,11 +101,6 @@ class lugar_legal extends Phaser.Scene {
 		
 		this.cursors = this.input.keyboard.createCursorKeys();
 		
-	}
-	
-	Save(player, Savepoint){
-		player.setPosition(1110,580);
-		game.scene.switch('lugar_legal','salvar');
 	}
 	
 	paraLoja(player, para_loja) {
