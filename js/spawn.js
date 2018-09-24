@@ -6,6 +6,7 @@ class spawn extends Phaser.Scene {
 		var cursors;
 		var gameOver = false;
 		var score = 0;
+		var npc2;
 	}
 	
 	preload ()
@@ -15,9 +16,7 @@ class spawn extends Phaser.Scene {
 		this.load.image('hitbox_spawn1', 'assets/hitbox_spawn1.png');
 		this.load.image('hitbox_spawn2', 'assets/hitbox_spawn2.png');
 		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 22, frameHeight: 31 });
-		this.load.image('arvore1', 'assets/arvore1.png');
-		this.load.image('arvore2', 'assets/arvore1.png');
-		
+		this.load.image('npc', 'assets/npc.png');
 	}
 	
 	create ()
@@ -50,20 +49,21 @@ class spawn extends Phaser.Scene {
 		
 		this.physics.add.overlap(this.player, this.hitbox_spawn2, this.entrarLoja, null, this);
 		
+		//Vilão	
+		this.npc2 = this.physics.add.sprite(205, 230, 'npc');
+		
+		this.physics.add.overlap(this.player, this.npc2, this.interagirVilao, null, this);
+
 		//Cursors
 		
 		this.cursors = this.input.keyboard.createCursorKeys(); 
-		
-		//Arvores do fundo
-		
-		this.arvore1 = this.physics.add.staticGroup();
-		
-		this.arvore1.create(100, 180, 'arvore1');
-		
-		this.arvore2 = this.physics.add.staticGroup();
-		
-		this.arvore2.create(1150, 425, 'arvore2');
-		
+	}
+	
+	interagirVilao(player, npc2){
+		if (juju == 0){
+			player.setPosition(900,275);
+			game.scene.switch('spawn','teste4');
+		}
 	}
 	
 	entrarLoja(player, hitbox_spawn2){
@@ -72,6 +72,8 @@ class spawn extends Phaser.Scene {
 		game.scene.switch('spawn','loja');
 		
 	}
+
+
 	
 	update ()
 	{	
