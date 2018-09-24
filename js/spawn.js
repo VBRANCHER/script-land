@@ -15,6 +15,8 @@ class spawn extends Phaser.Scene {
 		this.load.image('hitbox_spawn1', 'assets/hitbox_spawn1.png');
 		this.load.image('hitbox_spawn2', 'assets/hitbox_spawn2.png');
 		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 22, frameHeight: 31 });
+		this.load.image('arvore1', 'assets/arvore1.png');
+		this.load.image('arvore2', 'assets/arvore1.png');
 		
 	}
 	
@@ -51,6 +53,17 @@ class spawn extends Phaser.Scene {
 		//Cursors
 		
 		this.cursors = this.input.keyboard.createCursorKeys(); 
+		
+		//Arvores do fundo
+		
+		this.arvore1 = this.physics.add.staticGroup();
+		
+		this.arvore1.create(100, 180, 'arvore1');
+		
+		this.arvore2 = this.physics.add.staticGroup();
+		
+		this.arvore2.create(1150, 425, 'arvore2');
+		
 	}
 	
 	entrarLoja(player, hitbox_spawn2){
