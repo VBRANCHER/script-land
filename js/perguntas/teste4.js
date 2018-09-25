@@ -8,11 +8,11 @@ class teste4 extends Phaser.Scene {
 	preload ()
 	{
         this.load.image('pergunta', 'assets/pergunta.png');
-        this.load.image('problema3', 'assets/vilao1/problema3.png');
-		this.load.image('buttonA3', 'assets/vilao1/buttonA3.png');
-		this.load.image('buttonB3', 'assets/vilao1/buttonB3.png');
-		this.load.image('buttonC3', 'assets/vilao1/buttonC3.png');
-		this.load.image('buttonD3', 'assets/vilao1/buttonD3.png');
+        this.load.image('problema1', 'assets/vilao2/problema1.png');
+		this.load.image('buttonA', 'assets/vilao2/buttonA.png');
+		this.load.image('buttonB', 'assets/vilao2/buttonB.png');
+		this.load.image('buttonC', 'assets/vilao2/buttonC.png');
+		this.load.image('buttonD', 'assets/vilao2/buttonD.png');
 		this.load.image('Protagonista2', 'assets/Protagonista2.png');
 		this.load.image('Vilão1', 'assets/Vilão1.png');
 	}
@@ -22,7 +22,7 @@ class teste4 extends Phaser.Scene {
 		
         this.add.image(640, 360, 'pergunta');
         
-        this.add.image(650, 510, 'problema3');
+        this.add.image(650, 510, 'problema1');
 
 		this.add.image(180, 500, 'Protagonista2');
 		
@@ -30,29 +30,29 @@ class teste4 extends Phaser.Scene {
 		
 		this.vidasText = this.add.text(10, 48, 'Vidas: ' + vidasRestantes, { font: '32px Arial', fill: '#000000' });
 		
-		this.startBtn = this.add.sprite(506, 596, 'buttonA3').setInteractive();
-		this.startBtn.on('pointerdown', function (event) { testeObj3.updateVidas();});
+		this.startBtn = this.add.sprite(506, 596, 'buttonA').setInteractive();
+		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste4','vitoria'); juju = 1;});
 
-		this.startBtn = this.add.sprite(506, 674, 'buttonB3').setInteractive();
-		this.startBtn.on('pointerdown', function (event) { testeObj3.updateVidas();});
+		this.startBtn = this.add.sprite(506, 674, 'buttonB').setInteractive();
+		this.startBtn.on('pointerdown', function (event) { testeObj4.updateVidas();});
 
-		this.startBtn = this.add.sprite(785, 596, 'buttonC3').setInteractive();
-		this.startBtn.on('pointerdown', function (event) { testeObj3.updateVidas();});
+		this.startBtn = this.add.sprite(785, 596, 'buttonC').setInteractive();
+		this.startBtn.on('pointerdown', function (event) { testeObj4.updateVidas();});
 
-		this.startBtn = this.add.sprite(790, 674, 'buttonD3').setInteractive();
-		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste3','vitoria'); jean = 1;});
+		this.startBtn = this.add.sprite(790, 674, 'buttonD').setInteractive();
+		this.startBtn.on('pointerdown', function (event) {testeObj4.updateVidas();});
 		
 	}
-	
+
 	updateVidas ()
     {	
 		vidasRestantes--; 
-        testeObj3.vidasText.setText('Vidas: ' + vidasRestantes);
+        testeObj4.vidasText.setText('Vidas: ' + vidasRestantes);
 		
 		if (vidasRestantes < 0){
 			vidasRestantes = 3;
-			testeObj3.vidasText.setText('Vidas: ' + vidasRestantes);
-			game.scene.switch('teste3','game_over');
+			testeObj4.vidasText.setText('Vidas: ' + vidasRestantes);
+			game.scene.switch('teste4','game_over');
 		}
     }
 	
