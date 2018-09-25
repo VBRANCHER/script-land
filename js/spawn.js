@@ -16,7 +16,7 @@ class spawn extends Phaser.Scene {
 		this.load.image('hitbox_spawn1', 'assets/hitbox_spawn1.png');
 		this.load.image('hitbox_spawn2', 'assets/hitbox_spawn2.png');
 		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 22, frameHeight: 31 });
-		this.load.image('npc', 'assets/npc.png');
+		this.load.image('npc2', 'assets/npc2.png');
 	}
 	
 	create ()
@@ -50,7 +50,7 @@ class spawn extends Phaser.Scene {
 		this.physics.add.overlap(this.player, this.hitbox_spawn2, this.entrarLoja, null, this);
 		
 		//Vilão	
-		this.npc2 = this.physics.add.sprite(205, 230, 'npc');
+		this.npc2 = this.physics.add.sprite(205, 230, 'npc2');
 		
 		this.physics.add.overlap(this.player, this.npc2, this.interagirVilao, null, this);
 
