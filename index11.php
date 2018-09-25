@@ -17,10 +17,10 @@
 	<script src="js/lugar_legal.js"></script>
 	<script src="js/loja.js"></script>
 	<script src="js/vitoria.js"></script>
-    <script src="js/perguntas/teste.js"></script>
-    <script src="js/perguntas/teste2.js"></script>
-    <script src="js/perguntas/teste3.js"></script>
-	<script src="js/perguntas/teste4.js"></script>
+    <script src="js/teste.js"></script>
+    <script src="js/teste2.js"></script>
+    <script src="js/teste3.js"></script>
+    <script src="js/teste4.js"></script>
     <script src="js/spawn.js"></script>
 	<script src="js/tutorial.js"></script>
 	<script src="js/salvar.js"></script>
@@ -89,14 +89,14 @@
 <script type="text/javascript">
 
 var jean = 0;
-var juju = 0;
+var personagem = 0;
 var testeObj = new teste();
 var testeObj2 = new teste2();
 var testeObj3 = new teste3();
 var testeObj4 = new teste4();
 var lojaObj = new loja();
-var lugar_legalObj = new lugar_legal();
 var spawnObj = new spawn();
+var lugar_legalObj = new lugar_legal();
 var vidasRestantes = 3;
 
 var config = {
