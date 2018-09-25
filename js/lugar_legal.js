@@ -14,18 +14,24 @@ class lugar_legal extends Phaser.Scene {
 		this.load.image('hitbox_cerca_horizontal', 'assets/hitbox_cerca_horizontal.png');
 		this.load.image('hitbox_cerca_vertical', 'assets/hitbox_cerca_vertical.png');
 		this.load.image('cerca_grande_horizontal', 'assets/cerca_grande_horizontal.png');
+		this.load.image('Savepoint', 'assets/Savepoint.png');
 		this.load.image('para_loja', 'assets/para_loja.png');
+		this.load.spritesheet('protagonista_1', 'assets/protagonista_1.png', { frameWidth: 44, frameHeight: 62 });
 		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 44, frameHeight: 62 });
-		this.load.image('arvore1', 'assets/arvore1.png');
-	    this.load.image('arvore_bonita_2', 'assets/arvore_bonita_2.png');
 	}
 
 	create ()
 	{
-	
 		this.add.image(640, 360, 'lugar_legal');
 		
-		this.player = this.physics.add.sprite(100, 170, 'protagonista_2');
+		if (personagem == 1){
+	
+			this.player = this.physics.add.sprite(100, 170, 'protagonista_1');
+		}
+		else if (personagem == 2){
+	
+			this.player = this.physics.add.sprite(100, 170, 'protagonista_2');
+		}
 		
 		this.player.setBounce(0);
 		this.player.setCollideWorldBounds(true);
@@ -55,16 +61,6 @@ class lugar_legal extends Phaser.Scene {
 				
 		this.physics.add.collider(this.player, this.hitbox_cerca_horizontal);
 		this.physics.add.collider(this.player, this.hitbox_cerca_vertical);
-		
-		// arvore do fundo
-		
-		this.arvore1 = this.physics.add.staticGroup();
-		
-		this.arvore1.create(500, 400, 'arvore1');
-		
-		this.arvore_bonita_2 = this.physics.add.staticGroup();
-		
-		this.arvore_bonita_2.create(1125, 200, 'arvore_bonita_2');
 		
 		// Animações do jogador
 		
@@ -106,10 +102,11 @@ class lugar_legal extends Phaser.Scene {
 	paraLoja(player, para_loja) {
 		player.setPosition(1220,543);
 		game.scene.switch('lugar_legal','loja');
-		lojaObj.verificaVilao();
 	}
+	
 	update ()
 	{	
+		
 		if (this.cursors.left.isDown)
 		{
 			this.player.setVelocityX(-200);
