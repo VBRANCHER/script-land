@@ -17,7 +17,6 @@ class lugar_legal extends Phaser.Scene {
 		this.load.image('para_loja', 'assets/para_loja.png');
 		this.load.spritesheet('protagonista_1', 'assets/protagonista_1.png', { frameWidth: 44, frameHeight: 62 });
 		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 44, frameHeight: 62 });
-		this.load.image('arvore1', 'assets/arvore1.png');
 	}
 
 	create ()
@@ -123,11 +122,6 @@ class lugar_legal extends Phaser.Scene {
 		
 		this.physics.add.overlap(this.player, this.para_loja, this.paraLoja, null, this);
 		
-		//arvores fundo
-		
-		this.arvore1 = this.physics.add.staticGroup();
-		
-		this.arvore1.create(470, 400, 'arvore1');
 		
 		//  Eventos do teclado
 		
