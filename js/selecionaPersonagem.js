@@ -23,11 +23,11 @@ class selecionaPersonagem extends Phaser.Scene {
 		this.startBtn = this.add.sprite(610, 650, 'seta_avancar').setInteractive();
 		this.startBtn.on('pointerdown', function (event) {game.scene.switch('selecionaPersonagem','tutorial'); });  */
 		
-		this.startBtn = this.add.sprite(482, 390, 'p1').setInteractive();
-		this.startBtn.on('pointerdown', function (event) {game.scene.switch('selecionaPersonagem','selecionaPersonagem'); });
+		this.startBtn = this.add.sprite(178, 390, 'p1').setInteractive();
+		this.startBtn.on('pointerdown', function (event) {personagem = 1; game.scene.switch('selecionaPersonagem','tutorial'); });
 		
-		this.startBtn = this.add.sprite(178, 390, 'p2').setInteractive();
-		this.startBtn.on('pointerdown', function (event) {game.scene.switch('selecionaPersonagem','tutorial'); });
+		this.startBtn = this.add.sprite(482, 390, 'p2').setInteractive();
+		this.startBtn.on('pointerdown', function (event) {personagem = 2; game.scene.switch('selecionaPersonagem','tutorial'); });
 		
 	}
 	update ()

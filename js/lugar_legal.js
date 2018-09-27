@@ -14,7 +14,6 @@ class lugar_legal extends Phaser.Scene {
 		this.load.image('hitbox_cerca_horizontal', 'assets/hitbox_cerca_horizontal.png');
 		this.load.image('hitbox_cerca_vertical', 'assets/hitbox_cerca_vertical.png');
 		this.load.image('cerca_grande_horizontal', 'assets/cerca_grande_horizontal.png');
-		this.load.image('Savepoint', 'assets/Savepoint.png');
 		this.load.image('para_loja', 'assets/para_loja.png');
 		this.load.spritesheet('protagonista_1', 'assets/protagonista_1.png', { frameWidth: 44, frameHeight: 62 });
 		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 44, frameHeight: 62 });
@@ -62,28 +61,59 @@ class lugar_legal extends Phaser.Scene {
 		this.physics.add.collider(this.player, this.hitbox_cerca_horizontal);
 		this.physics.add.collider(this.player, this.hitbox_cerca_vertical);
 		
-		// Animações do jogador
 		
-		this.anims.create({
-			key: 'left',
-			frames: this.anims.generateFrameNumbers('protagonista_2', { start: 0, end: 3 }),
-			frameRate: 10,
-			repeat: -1
-		});
+		// Animações do personagem 1
+		
+		if (personagem == 1){
+		
+			this.anims.create({
+				key: 'left',
+				frames: this.anims.generateFrameNumbers('protagonista_1', { start: 0, end: 3 }),
+				frameRate: 10,
+				repeat: -1
+			});
 
-		this.anims.create({
-			key: 'turn',
-			frames: [ { key: 'protagonista_2', frame: 4 } ],
-			frameRate: 20
-		});
+			this.anims.create({
+				key: 'turn',
+				frames: [ { key: 'protagonista_1', frame: 4 } ],
+				frameRate: 20
+			});
 
-		this.anims.create({
-			key: 'right',
-			frames: this.anims.generateFrameNumbers('protagonista_2', { start: 5, end: 8 }),
-			frameRate: 10,
-			repeat: -1
-		});
+			this.anims.create({
+				key: 'right',
+				frames: this.anims.generateFrameNumbers('protagonista_1', { start: 5, end: 8 }),
+				frameRate: 10,
+				repeat: -1
+			});
+			
+		}
+		
+		// Animações do personagem 2
+		
+		if (personagem == 2) {
+		
+			this.anims.create({
+				key: 'left',
+				frames: this.anims.generateFrameNumbers('protagonista_2', { start: 0, end: 3 }),
+				frameRate: 10,
+				repeat: -1
+			});
 
+			this.anims.create({
+				key: 'turn',
+				frames: [ { key: 'protagonista_2', frame: 4 } ],
+				frameRate: 20
+			});
+
+			this.anims.create({
+				key: 'right',
+				frames: this.anims.generateFrameNumbers('protagonista_2', { start: 5, end: 8 }),
+				frameRate: 10,
+				repeat: -1
+			});
+
+		}
+		
 		// Próxima Área
 		
 		this.para_loja = this.physics.add.staticGroup();
