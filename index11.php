@@ -91,6 +91,7 @@
 var jean = 0;
 var juju = 0;
 var personagem = 0;
+var totalMoedas = 0;
 var testeObj = new teste();
 var testeObj2 = new teste2();
 var testeObj3 = new teste3();
