@@ -89,6 +89,7 @@
 <script type="text/javascript">
 
 var jean = 0;
+var juju = 0;
 var personagem = 0;
 var testeObj = new teste();
 var testeObj2 = new teste2();
