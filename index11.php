@@ -17,10 +17,10 @@
 	<script src="js/lugar_legal.js"></script>
 	<script src="js/loja.js"></script>
 	<script src="js/vitoria.js"></script>
-    <script src="js/teste.js"></script>
-    <script src="js/teste2.js"></script>
-    <script src="js/teste3.js"></script>
-    <script src="js/teste4.js"></script>
+    <script src="js/perguntas/teste.js"></script>
+    <script src="js/perguntas/teste2.js"></script>
+    <script src="js/perguntas/teste3.js"></script>
+    <script src="js/perguntas/teste4.js"></script>
     <script src="js/spawn.js"></script>
 	<script src="js/tutorial.js"></script>
 	<script src="js/salvar.js"></script>
