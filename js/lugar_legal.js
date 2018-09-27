@@ -15,6 +15,7 @@ class lugar_legal extends Phaser.Scene {
 		this.load.image('hitbox_cerca_vertical', 'assets/hitbox_cerca_vertical.png');
 		this.load.image('cerca_grande_horizontal', 'assets/cerca_grande_horizontal.png');
 		this.load.image('para_loja', 'assets/para_loja.png');
+		this.load.image('moeda', 'assets/moeda.png');
 		this.load.spritesheet('protagonista_1', 'assets/protagonista_1.png', { frameWidth: 44, frameHeight: 62 });
 		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 44, frameHeight: 62 });
 		this.load.image('arvore1', 'assets/arvore1.png');
@@ -35,6 +36,15 @@ class lugar_legal extends Phaser.Scene {
 		
 		this.player.setBounce(0);
 		this.player.setCollideWorldBounds(true);
+		
+		// Moedas
+		
+		this.moedas =  this.physics.add.sprite(252, 162, 'moeda');
+		
+		this.physics.add.overlap(this.player, this.moedas, this.coletaMoedas, null, this);
+		
+		lugar_legalObj.moedasText = this.add.text(270, 30, 'Moedas: 0', { fontSize: '32px', fill: '#fff' });
+		
 		
 		// The score
 		//this.scoreText = this.add.text(970, 9, '0', { fontSize: '32px', fill: '#fff' });
@@ -138,6 +148,14 @@ class lugar_legal extends Phaser.Scene {
 	paraLoja(player, para_loja) {
 		player.setPosition(1220,543);
 		game.scene.switch('lugar_legal','loja');
+	}
+	
+	coletaMoedas(){
+		if (lugar_legalObj.moedas.visibility == true){
+			lugar_legalObj.moedas.setVisible(false);
+			totalMoedas = totalMoedas + 10;
+			lugar_legalObj.moedasText.setText('Moedas: ' + totalMoedas);
+		}
 	}
 	
 	update ()
