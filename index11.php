@@ -57,34 +57,7 @@
 	</script>
 
 </head>
-<body style="background-color: #000000">
-
-<div style="position: absolute">
-
-<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light" style="background-color: #FEFEFE !important">
- <a class="navbar-brand" href="#">
-          <img src="imgs/icone.png" height="50px" alt="">
-        </a>
-
-  <div class="collapse navbar-collapse" id="navbarNav" >
-<ul class="navbar-nav mr-auto">
-       
-			<li class="nav-item">
-			    <a class="nav-link" href="#">Opção desativada</a>
-				</li>
-				<li class="nav-item">
-          <a class="nav-link" href="#">Opção desativada</a>
-         </li>
-
-
-    </ul>
-	<button class="btn btn-outline-danger my-2 my-sm-0"  onClick="telaLogin()">Sair</a>
-  </div>
-</nav>
-
-</div>
-
-
+<body style="background-color: #000000" onload="carregarMoeda()">
 
 <script type="text/javascript">
 
@@ -119,7 +92,40 @@ var config = {
 var game = new Phaser.Game(config);
 game.scene.start(selecionaPersonagem);
 
+function carregarMoeda(){
+	document.getElementById("moedas").innerHTML = "Moedas: " + totalMoedas;
+}
+
 </script>
+
+<div style="position: absolute">
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light" style="background-color: #FEFEFE !important">
+ <a class="navbar-brand" href="#">
+          <img src="imgs/icone.png" height="50px" alt="">
+        </a>
+
+  <div class="collapse navbar-collapse" id="navbarNav" >
+<ul class="navbar-nav mr-auto">
+       
+			<li class="nav-item">
+			    <a class="nav-link" id ="moedas"><script>Moedas: 0</script></a>
+				</li>
+				<li class="nav-item">
+			<!--<a class="nav-link" href="#">Opção desativada</a> -->
+         </li>
+
+
+    </ul>
+	<button class="btn btn-outline-danger my-2 my-sm-0"  onClick="telaLogin()">Sair</a>
+  </div>
+</nav>
+
+</div>
+
+
+
+
 
 
 </body>
