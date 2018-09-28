@@ -31,7 +31,7 @@ class teste7 extends Phaser.Scene {
 	;
 
 		this.startBtn = this.add.sprite(506, 674, 'buttonCerto').setInteractive();
-		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste7','vitoria'); });;
+		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste7','vitoria2'); });;
 
 
 		this.startBtn = this.add.sprite(790, 674, 'buttonErrado').setInteractive();
