@@ -45,7 +45,7 @@ class lugar_legal extends Phaser.Scene {
 		this.physics.add.overlap(this.player, this.moedas, this.coletaMoedas, null, this);
 		this.physics.add.overlap(this.player, this.moedas2, this.coletaMoedas2, null, this);
 		
-		lugar_legalObj.moedasText = this.add.text(270, 30, 'Moedas: 0', { fontSize: '32px', fill: '#fff' });
+		
 		
 		
 		// The score
@@ -156,14 +156,15 @@ class lugar_legal extends Phaser.Scene {
 		if (lugar_legalObj.moedas.visible == true){
 			lugar_legalObj.moedas.setVisible(false);
 			totalMoedas = totalMoedas + 10;
-			lugar_legalObj.moedasText.setText('Moedas: ' + totalMoedas);
+			carregarMoeda();
 		}
 	}
 	coletaMoedas2(){
 		if (lugar_legalObj.moedas2.visible == true){
 			lugar_legalObj.moedas2.setVisible(false);
 			totalMoedas = totalMoedas + 10;
-			lugar_legalObj.moedasText.setText('Moedas: ' + totalMoedas);
+			carregarMoeda();
+			//lugar_legalObj.moedasText.setText('Moedas: ' + totalMoedas);
 		}
 	}
 	
