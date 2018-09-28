@@ -76,7 +76,7 @@ class spawn extends Phaser.Scene {
 	
 	interagirVilao(player, npc2){
 		if (juju == 0){
-			player.setPosition(900,275);
+			player.setPosition(245,275);
 			game.scene.switch('spawn','teste4');
 		}
 	}
