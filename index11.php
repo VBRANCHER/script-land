@@ -16,6 +16,16 @@
     <script src="js/phaser.min.js"></script>
 	<script src="js/lugar_legal.js"></script>
 	<script src="js/loja.js"></script>
+	<script src="js/vilao1/vitoria.js"></script>
+	<script src="js/vilao1/teste.js"></script>
+	<script src="js/vilao1/teste2.js"></script>
+	<script src="js/vilao1/teste3.js"></script>
+	<script src="js/vilao2/vitoria2.js"></script>
+	<script src="js/vilao2/teste.js"></script>
+	<script src="js/vilao2/teste4.js"></script>
+	<script src="js/vilao2/teste5.js"></script>
+	<script src="js/vilao2/teste6.js"></script>
+	<script src="js/vilao2/teste7.js"></script>
 	<script src="js/vitoria.js"></script>
     <script src="js/perguntas/teste.js"></script>
     <script src="js/perguntas/teste2.js"></script>
@@ -69,6 +79,9 @@ var testeObj = new teste();
 var testeObj2 = new teste2();
 var testeObj3 = new teste3();
 var testeObj4 = new teste4();
+var testeObj5 = new teste5();
+var testeObj6 = new teste6();
+var testeObj7 = new teste7();
 var lojaObj = new loja();
 var spawnObj = new spawn();
 var lugar_legalObj = new lugar_legal();
@@ -87,7 +100,9 @@ var config = {
         }
     },
 	
-	scene: [selecionaPersonagem, tutorial, lojaObj, spawnObj, testeObj, testeObj2, testeObj3, testeObj4, vitoria, loja_dentro, game_over, salvar, lugar_legalObj]
+	scene: [selecionaPersonagem, tutorial, lojaObj, spawnObj, testeObj, testeObj2, testeObj3,
+	testeObj4, testeObj5, testeObj6, testeObj7, vitoria, vitoria2, loja_dentro, game_over,
+	salvar, lugar_legalObj]
 };
 var game = new Phaser.Game(config);
 game.scene.start(selecionaPersonagem);
