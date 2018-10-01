@@ -176,58 +176,6 @@ class loja extends Phaser.Scene {
 			lojaObj.npc.setVisible(false);
 		}
 		
-		// Animações do personagem 1
-		
-		if (personagem == 1){
-		
-			this.anims.create({
-				key: 'left',
-				frames: this.anims.generateFrameNumbers('protagonista_1', { start: 0, end: 3 }),
-				frameRate: 10,
-				repeat: -1
-			});
-
-			this.anims.create({
-				key: 'turn',
-				frames: [ { key: 'protagonista_1', frame: 4 } ],
-				frameRate: 20
-			});
-
-			this.anims.create({
-				key: 'right',
-				frames: this.anims.generateFrameNumbers('protagonista_1', { start: 5, end: 8 }),
-				frameRate: 10,
-				repeat: -1
-			});
-			
-		}
-		
-		// Animações do personagem 2
-		
-		if (personagem == 2) {
-		
-			this.anims.create({
-				key: 'left',
-				frames: this.anims.generateFrameNumbers('protagonista_2', { start: 0, end: 3 }),
-				frameRate: 10,
-				repeat: -1
-			});
-
-			this.anims.create({
-				key: 'turn',
-				frames: [ { key: 'protagonista_2', frame: 4 } ],
-				frameRate: 20
-			});
-
-			this.anims.create({
-				key: 'right',
-				frames: this.anims.generateFrameNumbers('protagonista_2', { start: 5, end: 8 }),
-				frameRate: 10,
-				repeat: -1
-			});
-
-		}
-		
 		if (this.cursors.left.isDown)
 		{
 			this.player.setVelocityX(-200);

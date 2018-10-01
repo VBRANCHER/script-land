@@ -92,7 +92,8 @@ class spawn extends Phaser.Scene {
 	
 	update ()
 	{	
-		 if (this.cursors.left.isDown)
+	
+		if (this.cursors.left.isDown)
 		{
 			this.player.setVelocityX(-200);
 			this.player.setVelocityY(0);
