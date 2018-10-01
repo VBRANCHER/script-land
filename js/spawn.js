@@ -92,7 +92,11 @@ class spawn extends Phaser.Scene {
 	
 	update ()
 	{	
-	
+		
+		if (juju == 1){
+			spawnObj.npc2.setVisible(false);
+		}
+		
 		if (this.cursors.left.isDown)
 		{
 			this.player.setVelocityX(-200);
