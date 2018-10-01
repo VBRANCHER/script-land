@@ -40,7 +40,7 @@ class teste3 extends Phaser.Scene {
 		this.startBtn.on('pointerdown', function (event) { testeObj3.updateVidas();});
 
 		this.startBtn = this.add.sprite(790, 674, 'buttonD3').setInteractive();
-		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste3','vitoria'); jean = 1;});
+		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste3','vitoria'); jean = 1; totalMoedas = totalMoedas + 25; carregarMoeda();});
 		
 	}
 	
