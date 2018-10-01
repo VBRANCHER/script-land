@@ -1,5 +1,5 @@
 <!doctype html> 
-<html lang="en"> 
+<html> 
 <head> 
 
 	<link rel="stylesheet" type="text/css "href="css/bootstrap/bootstrap.css"/>
@@ -17,20 +17,14 @@
 	<script src="js/lugar_legal.js"></script>
 	<script src="js/loja.js"></script>
 	<script src="js/vilao1/vitoria.js"></script>
-	<script src="js/vilao1/teste.js"></script>
-	<script src="js/vilao1/teste2.js"></script>
-	<script src="js/vilao1/teste3.js"></script>
 	<script src="js/vilao2/vitoria2.js"></script>
-	<script src="js/vilao2/teste.js"></script>
-	<script src="js/vilao2/teste4.js"></script>
-	<script src="js/vilao2/teste5.js"></script>
-	<script src="js/vilao2/teste6.js"></script>
-	<script src="js/vilao2/teste7.js"></script>
-	<script src="js/vitoria.js"></script>
-    <script src="js/perguntas/teste.js"></script>
-    <script src="js/perguntas/teste2.js"></script>
-    <script src="js/perguntas/teste3.js"></script>
-    <script src="js/perguntas/teste4.js"></script>
+    <script src="js/vilao1/teste.js"></script>
+    <script src="js/vilao1/teste2.js"></script>
+    <script src="js/vilao1/teste3.js"></script>
+    <script src="js/vilao2/teste4.js"></script>
+    <script src="js/vilao2/teste5.js"></script>
+    <script src="js/vilao2/teste6.js"></script>
+    <script src="js/vilao2/teste7.js"></script>
     <script src="js/spawn.js"></script>
 	<script src="js/tutorial.js"></script>
 	<script src="js/salvar.js"></script>
