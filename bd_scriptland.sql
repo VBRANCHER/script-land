@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 10/09/2018 às 23:59
+-- Tempo de geração: 02/10/2018 às 02:50
 -- Versão do servidor: 5.7.11-log
 -- Versão do PHP: 5.6.15
 
@@ -86,6 +86,15 @@ CREATE TABLE `perfis` (
   `pontos` int(10) UNSIGNED NOT NULL COMMENT 'Pontuação total que o jogador conseguiu ao longo do jogo, o tempo restante de uma pergunta será convertido em pontos.',
   `jogadores_id` int(10) UNSIGNED ZEROFILL NOT NULL COMMENT 'Identifica os jogadores.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Tabela destinada a armazenar o progresso do perfil do usuário.';
+
+--
+-- Fazendo dump de dados para tabela `perfis`
+--
+
+INSERT INTO `perfis` (`id`, `personagem`, `moedas`, `ponto_salvo`, `tempo_jogado`, `vida`, `pontos`, `jogadores_id`) VALUES
+(0000000001, 1, 20, 1, '02:00:00', 3, 0, 0000000002),
+(0000000002, 1, 10, 1, '01:00:00', 3, 0, 0000000001),
+(0000000003, 2, 20, 1, '03:00:00', 3, 0, 0000000003);
 
 -- --------------------------------------------------------
 
@@ -225,7 +234,7 @@ ALTER TABLE `logins`
 -- AUTO_INCREMENT de tabela `perfis`
 --
 ALTER TABLE `perfis`
-  MODIFY `id` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT COMMENT 'Identificador de perfil.';
+  MODIFY `id` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT COMMENT 'Identificador de perfil.', AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de tabela `perguntas`
 --
