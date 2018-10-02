@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html> 
 <html> 
 <head> 
@@ -49,11 +52,7 @@
 	
 	function telaLogin(){
 		
-		<?php
-		session_start();
-		session_destroy();
-		?>
-		
+	
 		document.location.href = "index.php";
 		
 	}
@@ -105,6 +104,22 @@ game.scene.start(selecionaPersonagem);
 
 function carregarMoeda(){
 	document.getElementById("moedas").innerHTML = "Moedas: " + totalMoedas;
+	
+	var xmlhttp = new XMLHttpRequest();
+		
+		
+	xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			debugger;
+			//this.responseText;
+		
+		}
+	};
+		
+	xmlhttp.open("GET", "includes/atualizarMoedas.php?moeda=" + totalMoedas, true);
+	xmlhttp.send();
+	
+	
 }
 
 </script>
@@ -120,15 +135,10 @@ function carregarMoeda(){
 <ul class="navbar-nav mr-auto">
        
 			<li class="nav-item">
-			    <a class="nav-link" id ="moedas"><script>Moedas: 0</script></a>
-				</li>
-				<li class="nav-item">
-			<!--<a class="nav-link" href="#">Opção desativada</a> -->
-         </li>
-
-
+			    <a class="nav-text" id="moedas"><script>Moedas: 0</script></a>
+			</li>
     </ul>
-	<button class="btn btn-outline-danger my-2 my-sm-0"  onClick="telaLogin()">Sair</a>
+	<button class="btn btn-outline-danger mr-2 my-sm-0"  onClick="telaLogin()">Sair</button>
   </div>
 </nav>
 
