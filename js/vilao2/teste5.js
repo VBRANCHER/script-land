@@ -13,6 +13,7 @@ class teste5 extends Phaser.Scene {
 		this.load.image('buttonB5', 'assets/vilao2/buttonB5.png');
 		this.load.image('buttonC5', 'assets/vilao2/buttonC5.png');
 		this.load.image('buttonD5', 'assets/vilao2/buttonD5.png');
+		this.load.image('Protagonista1', 'assets/Protagonista1.png');
 		this.load.image('Protagonista2', 'assets/Protagonista2.png');
 		this.load.image('Vilão1', 'assets/Vilão1.png');
 	}
@@ -24,7 +25,12 @@ class teste5 extends Phaser.Scene {
         
         this.add.image(693, 520, 'problema5');
 
-		this.add.image(180, 500, 'Protagonista2');
+		if (personagem == 1){
+			this.add.image(180, 500, 'Protagonista1');
+		}
+		if (personagem == 2){
+			this.add.image(180, 500, 'Protagonista2');
+		}
 		
 		this.add.image(1100, 500, 'Vilão1');
 		

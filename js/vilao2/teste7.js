@@ -11,6 +11,7 @@ class teste7 extends Phaser.Scene {
         this.load.image('problema7', 'assets/vilao2/problema7.png');
 		this.load.image('buttonCerto', 'assets/vilao2/buttonCerto.png');
 		this.load.image('buttonErrado', 'assets/vilao2/buttonErrado.png');
+		this.load.image('Protagonista1', 'assets/Protagonista1.png');
 		this.load.image('Protagonista2', 'assets/Protagonista2.png');
 		this.load.image('Vilão1', 'assets/Vilão1.png');
 	}
@@ -22,7 +23,12 @@ class teste7 extends Phaser.Scene {
         
         this.add.image(650, 575, 'problema7');
 
-		this.add.image(180, 500, 'Protagonista2');
+		if (personagem == 1){
+			this.add.image(180, 500, 'Protagonista1');
+		}
+		if (personagem == 2){
+			this.add.image(180, 500, 'Protagonista2');
+		}
 		
 		this.add.image(1100, 500, 'Vilão1');
 		
@@ -31,7 +37,7 @@ class teste7 extends Phaser.Scene {
 	;
 
 		this.startBtn = this.add.sprite(506, 674, 'buttonCerto').setInteractive();
-		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste7','vitoria2'); });;
+		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste7','vitoria2'); juju = 1; totalMoedas = totalMoedas + 20; carregarMoeda(); });;
 
 
 		this.startBtn = this.add.sprite(790, 674, 'buttonErrado').setInteractive();
