@@ -12,6 +12,7 @@ if(isset($_POST["inputEmail"])){
 		
 	}
 	else{
+		print_r("oi");
 		$_SESSION["arrUsuario"] = $arr[0];
 	}
 }
