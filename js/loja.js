@@ -23,6 +23,7 @@ class loja extends Phaser.Scene {
 		this.load.image('hitbox7', 'assets/hitbox7.png');
 		this.load.image('loja', 'assets/loja.png');
 		this.load.image('para_lugar_legal', 'assets/para_lugar_legal.png');
+		this.load.image('para_arvores_legais', 'assets/para_arvores_legais.png');
 		this.load.image('npc', 'assets/npc.png');
 		this.load.spritesheet('protagonista_1', 'assets/protagonista_1.png', { frameWidth: 44, frameHeight: 62 });
 		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 44, frameHeight: 62 });
@@ -105,6 +106,13 @@ class loja extends Phaser.Scene {
 		
 		this.physics.add.overlap(this.player, this.para_lugar_legal, this.entrarLugar_legal, null, this);
 		
+		this.para_arvores_legais = this.physics.add.staticGroup();
+		
+		this.para_arvores_legais.create(905, 25, 'para_arvores_legais');
+		
+		this.physics.add.overlap(this.player, this.para_arvores_legais, this.entrarArvores_legais, null, this);
+		
+
 		//Vilão
 		this.npc = this.physics.add.sprite(900, 160, 'npc');
 		
@@ -152,6 +160,13 @@ class loja extends Phaser.Scene {
 		
 		player.setPosition(50,490);
 		game.scene.switch('loja','lugar_legal');
+		
+	}
+
+	entrarArvores_legais(player, para_arvores_legais) {
+		
+		player.setPosition(905, 130);
+		game.scene.switch('loja','arvores_legais');
 		
 	}
 	
