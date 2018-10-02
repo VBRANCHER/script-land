@@ -13,6 +13,7 @@ class teste3 extends Phaser.Scene {
 		this.load.image('buttonB3', 'assets/vilao1/buttonB3.png');
 		this.load.image('buttonC3', 'assets/vilao1/buttonC3.png');
 		this.load.image('buttonD3', 'assets/vilao1/buttonD3.png');
+		this.load.image('Protagonista1', 'assets/Protagonista1.png');
 		this.load.image('Protagonista2', 'assets/Protagonista2.png');
 		this.load.image('Vilão1', 'assets/Vilão1.png');
 	}
@@ -23,9 +24,13 @@ class teste3 extends Phaser.Scene {
         this.add.image(640, 360, 'pergunta');
         
         this.add.image(650, 510, 'problema3');
-
-		this.add.image(180, 500, 'Protagonista2');
 		
+		if (personagem == 1){
+			this.add.image(180, 500, 'Protagonista1');
+		}
+		if (personagem == 2){
+			this.add.image(180, 500, 'Protagonista2');
+		}
 		this.add.image(1100, 500, 'Vilão1');
 		
 		this.vidasText = this.add.text(10, 48, 'Vidas: ' + vidasRestantes, { font: '32px Arial', fill: '#000000' });
