@@ -17,6 +17,7 @@ class loja_dentro extends Phaser.Scene {
 		this.load.image('sair_loja', 'assets/sair_loja.png');
 		this.load.image('item1', 'assets/comprar_item_1.png');
 		this.load.image('item2', 'assets/comprar_item_2.png');
+		this.load.image('item3', 'assets/comprar_item_3.png');
 		this.load.spritesheet('protagonista_1', 'assets/protagonista_1.png', { frameWidth: 44, frameHeight: 62 });
 		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 44, frameHeight: 62 });
 	}
@@ -44,12 +45,41 @@ class loja_dentro extends Phaser.Scene {
 		
 		//Hitbox para compra de itens
 		
-		this.startBtn = this.add.sprite(480, 210, 'item1').setInteractive();
-		this.startBtn.on('pointerdown', function (event) {pularPergunta = pularPergunta + 1;});
-		
+		this.startBtn = this.add.sprite(481, 210, 'item1').setInteractive();
+		this.startBtn.on('pointerdown', function (event) {
+			
+			if (totalMoedas >= 50){
+				pularPergunta = pularPergunta + 1; 
+				totalMoedas = totalMoedas - 50;
+				carregarMoeda();
+			}else{
+				
+			}
+		});
 		
 		this.startBtn = this.add.sprite(795, 210, 'item2').setInteractive();
-		this.startBtn.on('pointerdown', function (event) {segundaChance = segundaChance + 1;});
+		this.startBtn.on('pointerdown', function (event) {
+			
+			if (totalMoedas >= 75){
+				segundaChance = segundaChance + 1; 
+				totalMoedas = totalMoedas - 75;
+				carregarMoeda();
+			}else{
+				
+			}
+		});
+		
+		this.startBtn = this.add.sprite(639, 210, 'item3').setInteractive();
+		this.startBtn.on('pointerdown', function (event) {
+		
+			if (totalMoedas >= 25){
+				bomba = bomba + 1;
+				totalMoedas = totalMoedas - 25;
+				carregarMoeda();
+			}else{
+				
+			}
+		});
 		
 		//Hitboxes
 		
