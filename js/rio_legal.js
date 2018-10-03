@@ -31,7 +31,8 @@ class rio_legal extends Phaser.Scene {
 		this.player.setBounce(0);
         this.player.setCollideWorldBounds(true);
 		this.player.setPosition(1200, 510);
-        this.cursors = this.input.keyboard.createCursorKeys();
+		
+		this.cursors = this.input.keyboard.createCursorKeys();
         
         this.para_arvores_legais2 = this.physics.add.staticGroup();
 		
@@ -42,8 +43,8 @@ class rio_legal extends Phaser.Scene {
 
     entrarArvores_legais2(player, para_arvores_legais2) {
 		
-		player.setPosition(1200, 510);
 		game.scene.switch('rio_legal','arvores_legais');
+		player.setPosition(1200, 510);
 		
 	}
     update ()

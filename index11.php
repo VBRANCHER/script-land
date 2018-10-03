@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once("includes/verifica_logado.php"); 
 ?>
 <!doctype html> 
 <html> 
@@ -29,6 +30,8 @@ session_start();
     <script src="js/vilao2/teste6.js"></script>
     <script src="js/vilao2/teste7.js"></script>
     <script src="js/spawn.js"></script>
+	<script src="js/arvores_legais.js"></script>
+	<script src="js/rio_legal.js"></script>
 	<script src="js/tutorial.js"></script>
 	<script src="js/salvar.js"></script>
 	<script src="js/loja_dentro.js"></script>
@@ -47,18 +50,6 @@ session_start();
 		}
 
 	</style>
-
-	<script>
-	
-	function telaLogin(){
-		
-	
-		document.location.href = "index.php";
-		
-	}
-	
-	</script>
-
 </head>
 <body style="background-color: #000000" onload="carregarMoeda()">
 
@@ -96,7 +87,7 @@ var config = {
     },
 	
 	scene: [selecionaPersonagem, tutorial, lojaObj, spawnObj, testeObj, testeObj2, testeObj3,
-	testeObj4, testeObj5, testeObj6, testeObj7, vitoria, vitoria2, loja_dentro, game_over,
+	testeObj4, testeObj5, testeObj6, testeObj7, vitoria, vitoria2, loja_dentro, game_over, arvores_legais, rio_legal,
 	salvar, lugar_legalObj]
 };
 var game = new Phaser.Game(config);
@@ -110,7 +101,7 @@ function carregarMoeda(){
 		
 	xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			debugger;
+			
 			//this.responseText;
 		
 		}
@@ -138,7 +129,7 @@ function carregarMoeda(){
 			    <a class="nav-text" id="moedas"><script>Moedas: 0</script></a>
 			</li>
     </ul>
-	<button class="btn btn-outline-danger mr-2 my-sm-0"  onClick="telaLogin()">Sair</button>
+	<a href="logout.php"><button class="btn btn-outline-danger mr-2 my-sm-0" >Sair</button></a>
   </div>
 </nav>
 
