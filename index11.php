@@ -2,7 +2,7 @@
 session_start();
 include_once("includes/verifica_logado.php"); 
 ?>
-<!doctype html> 
+
 <html> 
 <head> 
 
@@ -61,6 +61,7 @@ var personagem = 0;
 var totalMoedas = 0;
 var pularPergunta = 0;
 var segundaChance = 0;
+var bomba = 0;
 var testeObj = new teste();
 var testeObj2 = new teste2();
 var testeObj3 = new teste3();
@@ -89,6 +90,7 @@ var config = {
 	scene: [selecionaPersonagem, tutorial, lojaObj, spawnObj, testeObj, testeObj2, testeObj3,
 	testeObj4, testeObj5, testeObj6, testeObj7, vitoria, vitoria2, loja_dentro, game_over, arvores_legais, rio_legal,
 	salvar, lugar_legalObj]
+	
 };
 var game = new Phaser.Game(config);
 game.scene.start(selecionaPersonagem);
@@ -110,6 +112,8 @@ function carregarMoeda(){
 	xmlhttp.open("GET", "includes/atualizarMoedas.php?moeda=" + totalMoedas, true);
 	xmlhttp.send();
 	
+	xmlhttp.open("GET", "includes/atualizarMoedas.php?vida=" + vidasRestantes, true);
+	xmlhttp.send();
 	
 }
 
