@@ -36,9 +36,10 @@ function php_insert($pQuery){
 	
 	$dados = mysqli_query($conexao, $pQuery) or die("Erro ao usar seu INSERT");
 	
+	$id = mysqli_insert_id($conexao);
 	mysqli_close($conexao);
 	
-	return $dados;
+	return $id ;
 	
 }
 

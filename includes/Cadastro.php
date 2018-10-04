@@ -14,9 +14,11 @@ if (isset($_POST["email"])){
 	else{
 		
 		$insert = "INSERT INTO jogadores VALUES (DEFAULT, '{$_POST["name"]}', 'teste', '{$_POST["email"]}', '{$_POST["senha"]}', '2018-09-10')";
+		$id = php_insert($insert);
 		
-		$_SESSION["arrUsuario"] = php_insert($insert);
-	
+		$insert2 = "INSERT INTO perfis VALUES (DEFAULT, '1', '0', '1', '00:00:00', '3', '0', {$id})";
+		php_insert($insert2);
+		
 	}
 }
 
