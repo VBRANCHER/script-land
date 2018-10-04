@@ -56,8 +56,8 @@ class arvores_legais extends Phaser.Scene {
 
     entrarRio_legal(player, para_rio_legal) {
 		
-		player.setPosition(10,200);
 		game.scene.switch('arvores_legais','rio_legal');
+		player.setPosition(80,250);
 		
 	}
     update ()

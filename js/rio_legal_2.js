@@ -30,7 +30,7 @@ class rio_legal_2 extends Phaser.Scene {
 		}
 		this.player.setBounce(0);
         this.player.setCollideWorldBounds(true);
-		this.player.setPosition(1200, 510);
+		this.player.setPosition(1000, 720);
 		
 		this.cursors = this.input.keyboard.createCursorKeys();
 		
@@ -44,8 +44,9 @@ class rio_legal_2 extends Phaser.Scene {
 
 	entrarLago_legal(player, para_lago_legal) {
 		
-		game.scene.switch('rio_legal2','lago_legal ');
+		game.scene.switch('rio_legal_2','lago_legal');
 		player.setPosition(1200, 510);
+
 	}
     update ()
 	{	

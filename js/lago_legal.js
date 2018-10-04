@@ -14,6 +14,7 @@ class lago_legal extends Phaser.Scene {
 		
 		this.load.image('lago_legal', 'assets/lago_legal.png');
 		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 22, frameHeight: 31 });
+		this.load.spritesheet('protagonista_1', 'assets/protagonista_1.png', { frameWidth: 22, frameHeight: 31 });
 		this.load.image('npc2', 'assets/npc2.png');
 
 	}
