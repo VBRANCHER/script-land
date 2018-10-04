@@ -30,6 +30,8 @@ include_once("includes/verifica_logado.php");
     <script src="js/vilao2/teste6.js"></script>
     <script src="js/vilao2/teste7.js"></script>
     <script src="js/spawn.js"></script>
+	<script src="js/rio_legal_2.js"></script>
+	<script src="js/lago_legal.js"></script>
 	<script src="js/arvores_legais.js"></script>
 	<script src="js/rio_legal.js"></script>
 	<script src="js/tutorial.js"></script>
@@ -88,8 +90,8 @@ var config = {
     },
 	
 	scene: [selecionaPersonagem, tutorial, lojaObj, spawnObj, testeObj, testeObj2, testeObj3,
-	testeObj4, testeObj5, testeObj6, testeObj7, vitoria, vitoria2, loja_dentro, game_over, arvores_legais, rio_legal,
-	salvar, lugar_legalObj]
+	testeObj4, testeObj5, testeObj6, testeObj7, vitoria, vitoria2, 
+	loja_dentro, game_over, arvores_legais, rio_legal, rio_legal_2, lago_legal, salvar, lugar_legalObj]
 	
 };
 var game = new Phaser.Game(config);
