@@ -1,7 +1,7 @@
-class rio_legal extends Phaser.Scene {
+class rio_legal_2 extends Phaser.Scene {
 	constructor ()
 	{
-		super({key: 'rio_legal'});
+		super({key: 'rio_legal_2'});
 		var player;
 		var cursors;
 		var gameOver = false;
@@ -11,15 +11,14 @@ class rio_legal extends Phaser.Scene {
     preload ()
 	{
 		
-        this.load.image('rio_legal', 'assets/rio_legal.png');
-		this.load.image('para_arvores_legais_2', 'assets/para_arvores_legais_2.png');
-		this.load.image('para_rio_legal_2', 'assets/para_rio_legal_2.png');
+		this.load.image('rio_legal_2', 'assets/rio_legal_2.png');
+		this.load.image('para_lago_legal', 'assets/para_lago_legal.png');
 		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 22, frameHeight: 31 });
 		this.load.spritesheet('protagonista_1', 'assets/protagonista_1.png', { frameWidth: 44, frameHeight: 62 });
 	}
 	create ()
 	{
-        this.add.image(640, 360, 'rio_legal');
+        this.add.image(640, 360, 'rio_legal_2');
 
         if (personagem == 1){
 	
@@ -34,33 +33,19 @@ class rio_legal extends Phaser.Scene {
 		this.player.setPosition(1200, 510);
 		
 		this.cursors = this.input.keyboard.createCursorKeys();
-        
-        this.para_arvores_legais_2 = this.physics.add.staticGroup();
 		
-		this.para_arvores_legais_2.create(1255, 510, 'para_arvores_legais_2');
+		this.para_lago_legal = this.physics.add.staticGroup();
 		
-		this.physics.add.overlap(this.player, this.para_arvores_legais_2, this.entrarArvores_legais_2, null, this);
+		this.para_lago_legal.create(545, 15, 'para_lago_legal');
+		
+		this.physics.add.overlap(this.player, this.para_lago_legal, this.entrarLago_legal, null, this);
 
-		this.para_rio_legal_2 = this.physics.add.staticGroup();
-		
-		this.para_rio_legal_2.create(15, 510, 'para_rio_legal_2');
-		
-		this.physics.add.overlap(this.player, this.para_rio_legal_2, this.entrarRio_legal_2, null, this);
-		
     }
 
-    entrarArvores_legais_2(player, para_arvores_legais_2) {
+	entrarLago_legal(player, para_lago_legal) {
 		
-		game.scene.switch('rio_legal','arvores_legais');
+		game.scene.switch('rio_legal2','lago_legal ');
 		player.setPosition(1200, 510);
-		
-	}
-
-	entrarRio_legal_2(player, para_rio_legal_2) {
-		
-		game.scene.switch('rio_legal','rio_legal_2');
-		player.setPosition(1200, 510);
-		
 	}
     update ()
 	{	

@@ -164,10 +164,9 @@ class loja extends Phaser.Scene {
 	}
 
 	entrarArvores_legais(player, para_arvores_legais) {
-		
 
 		game.scene.switch('loja','arvores_legais');
-		player.setPosition(905, 10);
+		player.setPosition(905, 90);
 	}
 	
 	entrarLoja(player, loja) {

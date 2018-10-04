@@ -31,7 +31,7 @@ class arvores_legais extends Phaser.Scene {
 		}
 		this.player.setBounce(0);
         this.player.setCollideWorldBounds(true);
-		this.player.setPosition(1000,700);
+		this.player.setPosition(1000,650);
         //  Eventos do teclado
 		
 		this.cursors = this.input.keyboard.createCursorKeys();
@@ -50,11 +50,8 @@ class arvores_legais extends Phaser.Scene {
     }
 
     entrarCentro(player, para_centro) {
-		
 		game.scene.switch('arvores_legais','loja');
-		player.setPosition(1015,610);
-		
-		
+		player.setPosition(1015,635);
 	}
 
     entrarRio_legal(player, para_rio_legal) {
