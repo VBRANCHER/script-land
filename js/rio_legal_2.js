@@ -30,13 +30,13 @@ class rio_legal_2 extends Phaser.Scene {
 		}
 		this.player.setBounce(0);
         this.player.setCollideWorldBounds(true);
-		this.player.setPosition(1000, 720);
+		this.player.setPosition(1200, 500);
 		
 		this.cursors = this.input.keyboard.createCursorKeys();
 		
 		this.para_lago_legal = this.physics.add.staticGroup();
 		
-		this.para_lago_legal.create(545, 15, 'para_lago_legal');
+		this.para_lago_legal.create(550, 15, 'para_lago_legal');
 		
 		this.physics.add.overlap(this.player, this.para_lago_legal, this.entrarLago_legal, null, this);
 

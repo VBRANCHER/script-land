@@ -27,7 +27,7 @@ class lago_legal extends Phaser.Scene {
 		this.player = this.physics.add.sprite(665, 490, 'protagonista_2');
 		this.player.setBounce(0);
 		this.player.setCollideWorldBounds(true);
-		this.player.setPosition(1000,150);
+		this.player.setPosition(380,680);
 	
 
 		
