@@ -12,7 +12,7 @@ include_once("includes/verifica_login.php");
 
 <title>Login do usuário</title>
 
-<link rel="shortcut icon" href="imgs/icone.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="assets/icone.ico" type="image/x-icon"/>
 
 <link rel="stylesheet" type="text/css "href="css/bootstrap/bootstrap.css"/>
 <link rel="stylesheet" type="text/css "href="css/signin.css"/>
@@ -42,7 +42,7 @@ include_once("includes/verifica_login.php");
 
 <div style="margin: 0 auto;">
 
-<img class="mb-4" src="imgs/LogoFinal.png" alt="" height="72">
+<img class="mb-4" src="assets/LogoFinal.png" alt="" height="72">
 
 <form class="form-signin" method="post" action="index.php">
 

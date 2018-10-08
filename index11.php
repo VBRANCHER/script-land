@@ -122,29 +122,27 @@ function carregarMoeda(){
 </script>
 
 <div style="position: absolute">
+	<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light" style="background-color: #FEFEFE !important">
+		<a class="navbar-brand" href="#">
+			<img src="assets/icone.png" height="50px" alt="">
+		</a>
 
-<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light" style="background-color: #FEFEFE !important">
- <a class="navbar-brand" href="#">
-          <img src="imgs/icone.png" height="50px" alt="">
-        </a>
-
-  <div class="collapse navbar-collapse" id="navbarNav" >
-<ul class="navbar-nav mr-auto">
-       
-			<li class="nav-item">
-			    <a class="nav-text" id="moedas"><script>Moedas: 0</script></a>
-			</li>
-    </ul>
-	<a href="logout.php"><button class="btn btn-outline-danger mr-2 my-sm-0" >Sair</button></a>
-  </div>
-</nav>
+		<div class="collapse navbar-collapse" id="navbarNav">
+		
+			<ul class="navbar-nav mr-auto">
+		   
+				<li class="nav-item">
+					<a class="nav-text" id="moedas"><script>Moedas: 0</script></a>
+				</li>
+				
+			</ul>
+			
+			<a href="logout.php"><button class="btn btn-outline-danger mr-2 my-sm-0" >Sair</button></a>
+			
+		</div>
+	</nav>
 
 </div>
-
-
-
-
-
 
 </body>
 </html>
