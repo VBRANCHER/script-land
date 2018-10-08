@@ -13,6 +13,7 @@ class lago_legal extends Phaser.Scene {
 	{
 		
 		this.load.image('lago_legal', 'assets/lago_legal.png');
+		this.load.image('para_rio_legal_22', 'assets/para_rio_legal_22.png');
 		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 22, frameHeight: 31 });
 		this.load.spritesheet('protagonista_1', 'assets/protagonista_1.png', { frameWidth: 22, frameHeight: 31 });
 		this.load.image('npc2', 'assets/npc2.png');
@@ -27,7 +28,7 @@ class lago_legal extends Phaser.Scene {
 		this.player = this.physics.add.sprite(665, 490, 'protagonista_2');
 		this.player.setBounce(0);
 		this.player.setCollideWorldBounds(true);
-		this.player.setPosition(380,680);
+		this.player.setPosition(380,650);
 	
 
 		
@@ -41,6 +42,12 @@ class lago_legal extends Phaser.Scene {
 		
 		this.cursors = this.input.keyboard.createCursorKeys(); 
 	
+		this.para_rio_legal_22 = this.physics.add.staticGroup();
+		
+		this.para_rio_legal_22.create(415, 710, 'para_rio_legal_22');
+		
+		this.physics.add.overlap(this.player, this.para_rio_legal_22, this.entrarRio_legal_22, null, this);
+		
 	}
 	
 	interagirVilao(player, npc2){
@@ -50,7 +57,11 @@ class lago_legal extends Phaser.Scene {
 		}
 	}
 	
-
+	entrarRio_legal_22(player, para_rio_legal_2) {
+		
+		game.scene.switch('lago_legal','rio_legal_2');
+		player.setPosition(405,625);
+	}
 	
 	update ()
 	{	
