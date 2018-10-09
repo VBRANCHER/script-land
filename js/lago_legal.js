@@ -53,7 +53,7 @@ class lago_legal extends Phaser.Scene {
 	interagirVilao(player, npc2){
 		if (juju == 0){
 			player.setPosition(245,275);
-			game.scene.switch('lago_legal','teste4');
+			game.scene.switch('lago_legal','teste8');
 		}
 	}
 	
