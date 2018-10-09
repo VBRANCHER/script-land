@@ -29,6 +29,8 @@ include_once("includes/verifica_logado.php");
     <script src="js/vilao2/teste5.js"></script>
     <script src="js/vilao2/teste6.js"></script>
     <script src="js/vilao2/teste7.js"></script>
+    <script src="js/vilao3/teste8.js"></script>
+    <script src="js/vilao3/vitoria3.js"></script>
     <script src="js/spawn.js"></script>
 	<script src="js/rio_legal_2.js"></script>
 	<script src="js/lago_legal.js"></script>
@@ -71,6 +73,7 @@ var testeObj4 = new teste4();
 var testeObj5 = new teste5();
 var testeObj6 = new teste6();
 var testeObj7 = new teste7();
+var testeObj8 = new teste7();
 var lojaObj = new loja();
 var spawnObj = new spawn();
 var lugar_legalObj = new lugar_legal();
@@ -90,7 +93,7 @@ var config = {
     },
 	
 	scene: [selecionaPersonagem, tutorial, lojaObj, spawnObj, testeObj, testeObj2, testeObj3,
-	testeObj4, testeObj5, testeObj6, testeObj7, vitoria, vitoria2, 
+	testeObj4, testeObj5, testeObj6, testeObj7, testeObj8, vitoria, vitoria2, vitoria3, 
 	loja_dentro, game_over, arvores_legais, rio_legal, rio_legal_2, lago_legal, salvar, lugar_legalObj]
 	
 };
