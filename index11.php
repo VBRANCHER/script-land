@@ -137,11 +137,54 @@ function carregarMoeda(){
 				
 			</ul>
 			
+			<button type="button" class="btn btn-outline-primary mr-4 my-sm-0" data-toggle="modal" data-target="#exampleModalCenter">
+			Inventário
+			</button>
+			
 			<a href="logout.php"><button class="btn btn-outline-danger mr-2 my-sm-0" >Sair</button></a>
 			
 		</div>
 	</nav>
+</div>
 
+<!-- Modal -->
+<div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLongTitle">Inventário</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				
+				<center>
+				
+				<img src="assets/perk_bomba.png" onclick="inventário()">
+				<br>
+				Bomba
+				<br>
+				<br>
+				<img src="assets/perk_pular_pergunta.png">
+				<br>
+				Pular Pergunta
+				<br>
+				<br>
+				<img src="assets/perk_segunda_chance.png">
+				<br>
+				Segunda Chance
+				<br>
+				<br>
+				
+				</center>
+				
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+			</div>
+		</div>
+	</div>
 </div>
 
 </body>
