@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02/10/2018 às 02:50
+-- Tempo de geração: 09/10/2018 às 02:57
 -- Versão do servidor: 5.7.11-log
 -- Versão do PHP: 5.6.15
 
@@ -92,7 +92,7 @@ CREATE TABLE `perfis` (
 --
 
 INSERT INTO `perfis` (`id`, `personagem`, `moedas`, `ponto_salvo`, `tempo_jogado`, `vida`, `pontos`, `jogadores_id`) VALUES
-(0000000001, 1, 20, 1, '02:00:00', 3, 0, 0000000002),
+(0000000001, 1, 10, 1, '02:00:00', 3, 0, 0000000002),
 (0000000002, 1, 10, 1, '01:00:00', 3, 0, 0000000001),
 (0000000003, 2, 20, 1, '03:00:00', 3, 0, 0000000003);
 
@@ -116,12 +116,9 @@ CREATE TABLE `perfis_has_itens` (
 
 CREATE TABLE `perguntas` (
   `id` int(10) UNSIGNED ZEROFILL NOT NULL COMMENT 'Identifica a pergunta.',
-  `enunciado` varchar(75) NOT NULL COMMENT 'Enunciado na qual o vilão irá atacar com sua pergunta.\n',
-  `tempo` time NOT NULL COMMENT 'Tempo que o jogador terá que responder a pergunta.\n',
-  `alt_1` varchar(50) NOT NULL COMMENT 'Alternativa 1 do enunciado.',
-  `alt_2` varchar(50) NOT NULL COMMENT 'Alternativa 2 do enunciado.\n',
-  `alt_3` varchar(50) NOT NULL COMMENT 'Alternativa 3 do enunciado.',
-  `alt_correta` varchar(50) NOT NULL COMMENT 'Alternativa correta do enunciado.\n',
+  `pular_pergunta` tinyint(1) UNSIGNED NOT NULL COMMENT 'Item "Pular Pergunta"',
+  `bomba` tinyint(1) UNSIGNED NOT NULL COMMENT 'Item "Bomba"',
+  `segunda_chance` tinyint(1) UNSIGNED NOT NULL COMMENT 'Item "Segunda Chance"',
   `viloes_nome` varchar(12) NOT NULL COMMENT 'Identifica o nome dos vilões.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Tabela destinada a armazenar as perguntas e suas alternativas.';
 
@@ -145,9 +142,7 @@ CREATE TABLE `perguntas_has_perfis` (
 --
 
 CREATE TABLE `viloes` (
-  `nome` varchar(12) NOT NULL COMMENT 'Nome do vilão.',
-  `materias` varchar(17) NOT NULL COMMENT 'Matéria (--) do vilão.',
-  `img` varchar(255) NOT NULL COMMENT 'URL da imagem que contém a pergunta.'
+  `nome` varchar(12) NOT NULL COMMENT 'Nome do vilão.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Tabela destinada a armazenar os vilões e suas respectivas matérias. ';
 
 --
