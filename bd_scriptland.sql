@@ -118,8 +118,7 @@ CREATE TABLE `perguntas` (
   `id` int(10) UNSIGNED ZEROFILL NOT NULL COMMENT 'Identifica a pergunta.',
   `pular_pergunta` tinyint(1) UNSIGNED NOT NULL COMMENT 'Item "Pular Pergunta"',
   `bomba` tinyint(1) UNSIGNED NOT NULL COMMENT 'Item "Bomba"',
-  `segunda_chance` tinyint(1) UNSIGNED NOT NULL COMMENT 'Item "Segunda Chance"',
-  `viloes_nome` varchar(12) NOT NULL COMMENT 'Identifica o nome dos vilões.'
+  `segunda_chance` tinyint(1) UNSIGNED NOT NULL COMMENT 'Item "Segunda Chance"'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Tabela destinada a armazenar as perguntas e suas alternativas.';
 
 -- --------------------------------------------------------
@@ -136,14 +135,6 @@ CREATE TABLE `perguntas_has_perfis` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Tabela destinada a armazenar as respostas que o jogador dá e o tempo jogado. ';
 
 -- --------------------------------------------------------
-
---
--- Estrutura para tabela `viloes`
---
-
-CREATE TABLE `viloes` (
-  `nome` varchar(12) NOT NULL COMMENT 'Nome do vilão.'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Tabela destinada a armazenar os vilões e suas respectivas matérias. ';
 
 --
 -- Índices de tabelas apagadas
@@ -188,8 +179,7 @@ ALTER TABLE `perfis_has_itens`
 -- Índices de tabela `perguntas`
 --
 ALTER TABLE `perguntas`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_perguntas_viloes1_idx` (`viloes_nome`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices de tabela `perguntas_has_perfis`
@@ -198,13 +188,6 @@ ALTER TABLE `perguntas_has_perfis`
   ADD PRIMARY KEY (`perguntas_id`,`perfis_id`),
   ADD KEY `fk_perguntas_has_perfis_perfis1_idx` (`perfis_id`),
   ADD KEY `fk_perguntas_has_perfis_perguntas1_idx` (`perguntas_id`);
-
---
--- Índices de tabela `viloes`
---
-ALTER TABLE `viloes`
-  ADD PRIMARY KEY (`nome`),
-  ADD UNIQUE KEY `nome_UNIQUE` (`nome`);
 
 --
 -- AUTO_INCREMENT de tabelas apagadas
@@ -257,12 +240,6 @@ ALTER TABLE `perfis`
 ALTER TABLE `perfis_has_itens`
   ADD CONSTRAINT `fk_perfis_has_itens_itens1` FOREIGN KEY (`itens_id`) REFERENCES `itens` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_perfis_has_itens_perfis1` FOREIGN KEY (`perfis_id`) REFERENCES `perfis` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Restrições para tabelas `perguntas`
---
-ALTER TABLE `perguntas`
-  ADD CONSTRAINT `fk_perguntas_viloes1` FOREIGN KEY (`viloes_nome`) REFERENCES `viloes` (`nome`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Restrições para tabelas `perguntas_has_perfis`
