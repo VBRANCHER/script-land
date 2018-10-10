@@ -19,6 +19,8 @@ if (isset($_POST["email"])){
 		$insert2 = "INSERT INTO perfis VALUES (DEFAULT, '1', '0', '1', '00:00:00', '3', '0', {$id})";
 		php_insert($insert2);
 		
+		$insert3 = "INSERT INTO perguntas VALUES (DEFAULT, '0', '0', '0')";
+		php_insert($insert3);
 	}
 }
 
