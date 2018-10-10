@@ -28,24 +28,24 @@ class loja_dentro extends Phaser.Scene {
 		this.add.image(640, 360, 'lojinha');
 		
 		this.sair_loja = this.physics.add.staticGroup();
-		this.sair_loja.create(574, 565, 'sair_loja');
+		this.sair_loja.create(574, 645, 'sair_loja');
 		
 		if (personagem == 1){
 	
-			this.player = this.physics.add.sprite(665, 490, 'protagonista_1');
+			this.player = this.physics.add.sprite(665, 560, 'protagonista_1');
 		}
 		else if (personagem == 2){
 	
-			this.player = this.physics.add.sprite(665, 490, 'protagonista_2');
+			this.player = this.physics.add.sprite(665, 560, 'protagonista_2');
 		}
 		
 		this.player.setBounce(0);
 		this.player.setCollideWorldBounds(true);
-		this.player.setPosition(665,490);
+		this.player.setPosition(665,560);
 		
 		//Hitbox para compra de itens
 		
-		this.startBtn = this.add.sprite(481, 210, 'item1').setInteractive();
+		this.startBtn = this.add.sprite(481, 290, 'item1').setInteractive();
 		this.startBtn.on('pointerdown', function (event) {
 			
 			if (totalMoedas >= 50){
@@ -57,7 +57,7 @@ class loja_dentro extends Phaser.Scene {
 			}
 		});
 		
-		this.startBtn = this.add.sprite(795, 210, 'item2').setInteractive();
+		this.startBtn = this.add.sprite(795, 290, 'item2').setInteractive();
 		this.startBtn.on('pointerdown', function (event) {
 			
 			if (totalMoedas >= 75){
@@ -69,7 +69,7 @@ class loja_dentro extends Phaser.Scene {
 			}
 		});
 		
-		this.startBtn = this.add.sprite(639, 210, 'item3').setInteractive();
+		this.startBtn = this.add.sprite(639, 290, 'item3').setInteractive();
 		this.startBtn.on('pointerdown', function (event) {
 		
 			if (totalMoedas >= 25){
@@ -85,23 +85,23 @@ class loja_dentro extends Phaser.Scene {
 		
 		this.lojinha_hitbox1 = this.physics.add.staticGroup();
 		
-		this.lojinha_hitbox1.create(451, 527, 'lojinha_hitbox1');
+		this.lojinha_hitbox1.create(451, 607, 'lojinha_hitbox1');
 		
-		this.lojinha_hitbox1.create(831, 527, 'lojinha_hitbox1');
+		this.lojinha_hitbox1.create(831, 607, 'lojinha_hitbox1');
 		
 		this.physics.add.collider(this.player, this.lojinha_hitbox1);
 		
 		this.lojinha_hitbox2 = this.physics.add.staticGroup();
 		
-		this.lojinha_hitbox2.create(670, 335, 'lojinha_hitbox2');
+		this.lojinha_hitbox2.create(670, 395, 'lojinha_hitbox2');
 		
 		this.physics.add.collider(this.player, this.lojinha_hitbox2);
 		
 		this.lojinha_hitbox3 = this.physics.add.staticGroup();
 		
-		this.lojinha_hitbox3.create(325, 420, 'lojinha_hitbox3');
+		this.lojinha_hitbox3.create(325, 500, 'lojinha_hitbox3');
 		
-		this.lojinha_hitbox3.create(945, 420, 'lojinha_hitbox3');
+		this.lojinha_hitbox3.create(945, 500, 'lojinha_hitbox3');
 		
 		this.physics.add.collider(this.player, this.lojinha_hitbox3);
 		
@@ -116,7 +116,7 @@ class loja_dentro extends Phaser.Scene {
 	
 	sairLoja(player, sair_loja) {
 		
-		player.setPosition(665,490);
+		player.setPosition(665,560);
 		game.scene.switch('loja_dentro','loja');
 		
 	}
