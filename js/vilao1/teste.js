@@ -66,6 +66,6 @@ class teste extends Phaser.Scene {
 	
 	update ()
 	{	
-		
+		testeObj.vidasText.setText('Vidas: ' + vidasRestantes);
 	}
 }

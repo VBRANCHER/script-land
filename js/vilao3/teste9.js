@@ -37,7 +37,7 @@ class teste9 extends Phaser.Scene {
 	;
 
 		this.startBtn = this.add.sprite(506, 674, 'buttonCerto').setInteractive();
-		this.startBtn.on('pointerdown', function (event) {testeObj7.updateVidas();});
+		this.startBtn.on('pointerdown', function (event) {testeObj9.updateVidas();});
 
 
 		this.startBtn = this.add.sprite(790, 674, 'buttonErrado').setInteractive();
@@ -53,13 +53,13 @@ class teste9 extends Phaser.Scene {
 		if (vidasRestantes < 0){
 			vidasRestantes = 3;
 			testeObj9.vidasText.setText('Vidas: ' + vidasRestantes);
-			game.scene.switch('teste9','game_over');
+			game.scene.switch('teste9','game_over3');
 		}
     }
 	
 	update ()
 	{	
-		
+		testeObj9.vidasText.setText('Vidas: ' + vidasRestantes);
 	
 	}
 
