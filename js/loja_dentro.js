@@ -116,8 +116,8 @@ class loja_dentro extends Phaser.Scene {
 	
 	sairLoja(player, sair_loja) {
 		
-		player.setPosition(665,560);
 		game.scene.switch('loja_dentro','loja');
+		player.setPosition(665,560);
 		
 	}
 	
