@@ -72,6 +72,8 @@ var totalMoedas = 0;
 var pularPergunta = 0;
 var segundaChance = 0;
 var bomba = 0;
+var vidasRestantes = 3;
+var score = 0;
 var testeObj = new teste();
 var testeObj2 = new teste2();
 var testeObj3 = new teste3();
@@ -87,7 +89,6 @@ var lojaObj = new loja();
 var spawnObj = new spawn();
 var lago_legalObj = new lago_legal();
 var lugar_legalObj = new lugar_legal();
-var vidasRestantes = 3;
 
 var config = {
     type: Phaser.AUTO,
@@ -113,6 +114,8 @@ game.scene.start(selecionaPersonagem);
 function carregarMoeda(){
 	document.getElementById("moedas").innerHTML = "Moedas: " + totalMoedas;
 	
+	document.getElementById("score").innerHTML = "Pontos: " + score;
+	
 	var xmlhttp = new XMLHttpRequest();
 		
 		
@@ -123,13 +126,15 @@ function carregarMoeda(){
 		
 		}
 	};
-		
+	
 	xmlhttp.open("GET", "includes/atualizarMoedas.php?moeda=" + totalMoedas, true);
 	xmlhttp.send();
 	
 	xmlhttp.open("GET", "includes/atualizarMoedas.php?vida=" + vidasRestantes, true);
 	xmlhttp.send();
 	
+	xmlhttp.open("GET", "includes/atualizarMoedas.php?score=" + score, true);
+	xmlhttp.send();
 }
 
 </script>
@@ -145,7 +150,8 @@ function carregarMoeda(){
 			<ul class="navbar-nav mr-auto">
 		   
 				<li class="nav-item">
-					<a class="nav-text" id="moedas"><script>Moedas: 0</script></a>
+					<a style="margin-left: 30px; margin-right: 20px;" class="nav-text" id="moedas"><script>Moedas: 0</script></a>
+					<a style="margin-left: 20px; margin-right: 20px;" class="nav-text" id="score"><script>Pontos: 0</script></a>
 				</li>
 				
 			</ul>
