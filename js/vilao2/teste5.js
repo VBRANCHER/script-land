@@ -37,16 +37,28 @@ class teste5 extends Phaser.Scene {
 		this.vidasText = this.add.text(10, 48, 'Vidas: ' + vidasRestantes, { font: '32px Arial', fill: '#000000' });
 		
 		this.startBtn = this.add.sprite(506, 596, 'buttonA5').setInteractive();
-		this.startBtn.on('pointerdown', function (event) { testeObj5.updateVidas();});
+		this.startBtn.on('pointerdown', function (event) { testeObj5.updateVidas(); score = score - 5; 
+		if (score < 0){
+			score = 0;
+		}
+		carregarMoeda();});
 
 		this.startBtn = this.add.sprite(506, 674, 'buttonB5').setInteractive();
-		this.startBtn.on('pointerdown', function (event) { testeObj5.updateVidas();});
+		this.startBtn.on('pointerdown', function (event) { testeObj5.updateVidas(); score = score - 5; 
+		if (score < 0){
+			score = 0;
+		}
+		carregarMoeda();});
 
 		this.startBtn = this.add.sprite(785, 596, 'buttonC5').setInteractive();
-		this.startBtn.on('pointerdown', function (event) { testeObj5.updateVidas();});
+		this.startBtn.on('pointerdown', function (event) { testeObj5.updateVidas(); score = score - 5; 
+		if (score < 0){
+			score = 0;
+		}
+		carregarMoeda();});
 
 		this.startBtn = this.add.sprite(790, 674, 'buttonD5').setInteractive();
-		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste5','teste6'); juju = 1;});
+		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste5','teste6'); score = score + 10; carregarMoeda();});
 		
 	}
 

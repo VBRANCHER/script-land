@@ -36,16 +36,28 @@ class teste3 extends Phaser.Scene {
 		this.vidasText = this.add.text(10, 48, 'Vidas: ' + vidasRestantes, { font: '32px Arial', fill: '#000000' });
 		
 		this.startBtn = this.add.sprite(506, 596, 'buttonA3').setInteractive();
-		this.startBtn.on('pointerdown', function (event) { testeObj3.updateVidas();});
+		this.startBtn.on('pointerdown', function (event) { testeObj3.updateVidas(); score = score - 5; 
+		if (score < 0){
+			score = 0;
+		}
+		carregarMoeda();});
 
 		this.startBtn = this.add.sprite(506, 674, 'buttonB3').setInteractive();
-		this.startBtn.on('pointerdown', function (event) { testeObj3.updateVidas();});
+		this.startBtn.on('pointerdown', function (event) { testeObj3.updateVidas(); score = score - 5; 
+		if (score < 0){
+			score = 0;
+		}
+		carregarMoeda();});
 
 		this.startBtn = this.add.sprite(785, 596, 'buttonC3').setInteractive();
-		this.startBtn.on('pointerdown', function (event) { testeObj3.updateVidas();});
+		this.startBtn.on('pointerdown', function (event) { testeObj3.updateVidas(); score = score - 5; 
+		if (score < 0){
+			score = 0;
+		}
+		carregarMoeda();});
 
 		this.startBtn = this.add.sprite(790, 674, 'buttonD3').setInteractive();
-		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste3','vitoria'); jean = 1; totalMoedas = totalMoedas + 25; carregarMoeda();});
+		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste3','vitoria'); jean = 1; totalMoedas = totalMoedas + 25; score = score + 20; carregarMoeda();});
 		
 	}
 	

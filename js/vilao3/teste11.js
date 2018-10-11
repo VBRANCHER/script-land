@@ -37,11 +37,14 @@ class teste11 extends Phaser.Scene {
 	;
 
 		this.startBtn = this.add.sprite(506, 674, 'buttonCerto').setInteractive();
-		this.startBtn.on('pointerdown', function (event) {testeObj11.updateVidas();});
-
-
+		this.startBtn.on('pointerdown', function (event) {testeObj11.updateVidas(); score = score - 5; 
+		if (score < 0){
+			score = 0;
+		}
+		carregarMoeda();});
+		
 		this.startBtn = this.add.sprite(790, 674, 'buttonErrado').setInteractive();
-		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste11','vitoria3'); john = 1; totalMoedas = totalMoedas + 20; carregarMoeda(); });;
+		this.startBtn.on('pointerdown', function (event) {game.scene.switch('teste11','vitoria3'); john = 1; totalMoedas = totalMoedas + 20; score = score + 20; carregarMoeda();});;
 		
 	}
 
