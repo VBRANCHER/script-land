@@ -18,7 +18,7 @@ class tutorial extends Phaser.Scene {
 		this.add.image(640, 360, 'salvar');
 		
 		this.startBtn = this.add.sprite(640, 360, 'tutorial').setInteractive();
-		this.startBtn.on('pointerdown', function (event) {game.scene.switch('tutorial','lugar_legal'); });
+		this.startBtn.on('pointerdown', function (event) {game.scene.switch('tutorial','tutorial2'); });
 		
 	}
 	update ()
