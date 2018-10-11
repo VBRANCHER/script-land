@@ -25,4 +25,7 @@ if(isset($_GET["pularPergunta"])){
 	sql_delete_update("UPDATE perguntas SET pular_pergunta = '{$_GET["pularPergunta"]}' WHERE id={$_SESSION["arrUsuario"]["id"]}");
 }
 
+if(isset($_GET["score"])){
+	sql_delete_update("UPDATE perfis SET score = '{$_GET["score"]}' WHERE id={$_SESSION["arrUsuario"]["id"]}");
+}
 ?>
