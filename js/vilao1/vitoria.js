@@ -8,7 +8,7 @@ class vitoria extends Phaser.Scene {
 	preload ()
 	{
 		
-		this.load.image('vitoria', 'assets/vitoria.png');
+		this.load.image('vitoria1', 'assets/vitoria1.png');
 		this.load.image('voltar', 'assets/setaVoltar.png');
 		
 	}
@@ -16,7 +16,7 @@ class vitoria extends Phaser.Scene {
 	create ()
 	{
 
-		this.add.image(640, 360, 'vitoria');
+		this.add.image(640, 360, 'vitoria1');
 		
 		this.startBtn = this.add.sprite(240, 650, 'voltar').setInteractive();
 		this.startBtn.on('pointerdown', function (event) {game.scene.switch('vitoria','loja'); });
