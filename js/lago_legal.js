@@ -6,7 +6,7 @@ class lago_legal extends Phaser.Scene {
 		var cursors;
 		var gameOver = false;
 		var score = 0;
-		var npc2;
+		var npc3;
 	}
 	
 	preload ()
@@ -16,7 +16,7 @@ class lago_legal extends Phaser.Scene {
 		this.load.image('para_rio_legal_22', 'assets/para_rio_legal_22.png');
 		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 22, frameHeight: 31 });
 		this.load.spritesheet('protagonista_1', 'assets/protagonista_1.png', { frameWidth: 22, frameHeight: 31 });
-		this.load.image('npc2', 'assets/npc2.png');
+		this.load.image('npc3', 'assets/npc3.png');
 
 	}
 	
@@ -34,9 +34,9 @@ class lago_legal extends Phaser.Scene {
 		
 		
 		//Vilão	
-		this.npc2 = this.physics.add.sprite(205, 230, 'npc2');
+		this.npc3 = this.physics.add.sprite(415, 230, 'npc3');
 		
-		this.physics.add.overlap(this.player, this.npc2, this.interagirVilao, null, this);
+		this.physics.add.overlap(this.player, this.npc3, this.interagirVilao, null, this);
 		
 		//Cursors
 		
@@ -50,9 +50,9 @@ class lago_legal extends Phaser.Scene {
 		
 	}
 	
-	interagirVilao(player, npc2){
-		if (juju == 0){
-			player.setPosition(245,275);
+	interagirVilao(player, npc3){
+		if (john == 0){
+			player.setPosition(415,340);
 			game.scene.switch('lago_legal','teste8');
 		}
 	}
@@ -66,8 +66,8 @@ class lago_legal extends Phaser.Scene {
 	update ()
 	{	
 		
-		if (juju == 1){
-			spawnObj.npc2.setVisible(false);
+		if (john == 1){
+			lago_legalObj.npc3.setVisible(false);
 		}
 		
 		if (this.cursors.left.isDown)
