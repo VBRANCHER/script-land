@@ -40,7 +40,9 @@ include_once("includes/verifica_login.php");
 	
 			<input type="email" name="email" class="form-withoutborder" placeholder="E-mail"  required autofocus>
 
-			<input type="text" name="name" class="form-withoutborder" placeholder="Nome de Usuário"  required>
+			<input type="text" name="name" class="form-withoutborder" placeholder="Nome Verdadeiro"  required>
+			
+			<input type="text" name="nomeusu" class="form-withoutborder" placeholder="Nome de Usuário"  required>
 
 			<input type="password" name="senha" class="form-withoutborder" style="margin-bottom:0px" placeholder="Senha"  required>
 
