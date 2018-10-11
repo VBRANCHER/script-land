@@ -11,7 +11,14 @@ class arvores_legais extends Phaser.Scene {
     preload ()
 	{
 		
-        this.load.image('arvores_legais', 'assets/arvores_legais.png');
+		this.load.image('arvores_legais', 'assets/arvores_legais.png');
+		this.load.image('hitbox_arvores_legais', 'assets/hitbox_arvores_legais.png');
+		this.load.image('hitbox_arvores_legais2', 'assets/hitbox_arvores_legais2.png');
+		this.load.image('hitbox_arvores_legais3', 'assets/hitbox_arvores_legais3.png');
+		this.load.image('hitbox_arvores_legais4', 'assets/hitbox_arvores_legais4.png');
+		this.load.image('hitbox_arvores_legais4', 'assets/hitbox_arvores_legais4.png');
+		this.load.image('hitbox_arvores_legais5', 'assets/hitbox_arvores_legais5.png');
+		this.load.image('hitbox_arvores_legais5', 'assets/hitbox_arvores_legais5.png');
         this.load.image('para_centro', 'assets/para_centro.png');
         this.load.image('para_rio_legal', 'assets/para_rio_legal.png');
 		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 22, frameHeight: 31 });
@@ -46,7 +53,51 @@ class arvores_legais extends Phaser.Scene {
 		
 		this.para_rio_legal.create(10,246, 'para_rio_legal');
 		
-        this.physics.add.overlap(this.player, this.para_rio_legal, this.entrarRio_legal, null, this);
+		this.physics.add.overlap(this.player, this.para_rio_legal, this.entrarRio_legal, null, this);
+		
+		//hitbox
+
+		this.hitbox_arvores_legais = this.physics.add.staticGroup();
+		
+		this.hitbox_arvores_legais.create(939, 510, 'hitbox_arvores_legais');
+		
+		this.physics.add.collider(this.player, this.hitbox_arvores_legais);
+
+		this.hitbox_arvores_legais2 = this.physics.add.staticGroup();
+		
+		this.hitbox_arvores_legais2.create(1085, 450, 'hitbox_arvores_legais2');
+		
+		this.physics.add.collider(this.player, this.hitbox_arvores_legais2);
+
+		this.hitbox_arvores_legais3 = this.physics.add.staticGroup();
+		
+		this.hitbox_arvores_legais3.create(469, 308, 'hitbox_arvores_legais3');
+		
+		this.physics.add.collider(this.player, this.hitbox_arvores_legais3);
+
+		this.hitbox_arvores_legais4 = this.physics.add.staticGroup();
+		
+		this.hitbox_arvores_legais4.create(708, 150, 'hitbox_arvores_legais4');
+		
+		this.physics.add.collider(this.player, this.hitbox_arvores_legais4);
+
+		this.hitbox_arvores_legais4 = this.physics.add.staticGroup();
+		
+		this.hitbox_arvores_legais4.create(-178, 150, 'hitbox_arvores_legais4');
+		
+		this.physics.add.collider(this.player, this.hitbox_arvores_legais4);
+
+		this.hitbox_arvores_legais5 = this.physics.add.staticGroup();
+		
+		this.hitbox_arvores_legais5.create(342, 85, 'hitbox_arvores_legais5');
+		
+		this.physics.add.collider(this.player, this.hitbox_arvores_legais5);
+
+		this.hitbox_arvores_legais5 = this.physics.add.staticGroup();
+		
+		this.hitbox_arvores_legais5.create(191, 85, 'hitbox_arvores_legais5');
+		
+		this.physics.add.collider(this.player, this.hitbox_arvores_legais5);
     }
 
     entrarCentro(player, para_centro) {
