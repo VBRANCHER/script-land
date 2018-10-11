@@ -18,11 +18,11 @@ if(isset($_GET["bomba"])){
 }
 
 if(isset($_GET["segundaChance"])){
-	sql_delete_update("UPDATE perfis SET segunda_chance = '{$_GET["segundaChance"]}' WHERE id={$_SESSION["arrUsuario"]["id"]}");
+	sql_delete_update("UPDATE perguntas SET segunda_chance = '{$_GET["segundaChance"]}' WHERE id={$_SESSION["arrUsuario"]["id"]}");
 }
 
 if(isset($_GET["pularPergunta"])){
-	sql_delete_update("UPDATE perfis SET pular_pergunta = '{$_GET["pularPergunta"]}' WHERE id={$_SESSION["arrUsuario"]["id"]}");
+	sql_delete_update("UPDATE perguntas SET pular_pergunta = '{$_GET["pularPergunta"]}' WHERE id={$_SESSION["arrUsuario"]["id"]}");
 }
 
 ?>
