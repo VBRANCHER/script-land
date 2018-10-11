@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09/10/2018 às 02:57
+-- Tempo de geração: 12/10/2018 às 01:09
 -- Versão do servidor: 5.7.11-log
 -- Versão do PHP: 5.6.15
 
@@ -81,7 +81,7 @@ CREATE TABLE `perfis` (
   `personagem` tinyint(1) NOT NULL COMMENT 'Personagem selecionado:\n1 = Personagem 1\n2 = Personagem 2\n3 = Personagem 3\n4 = Personagem 4',
   `moedas` smallint(5) UNSIGNED NOT NULL COMMENT 'Moedas que o jogador possui no total.',
   `ponto_salvo` tinyint(2) UNSIGNED NOT NULL COMMENT 'Em qual ponto salvo o jogador interagiu por último:\n1 = Ponto salvo 1\n2 = Ponto salvo 2\n3 = Ponto salvo 3\nE assim por diante.',
-  `tempo_jogado` time NOT NULL COMMENT 'Tempo total que o jogador passou jogando logado.',
+  `score` mediumint(9) NOT NULL COMMENT 'Pontos do jogador',
   `vida` tinyint(1) UNSIGNED NOT NULL COMMENT 'Quantas vidas o jogador possui no momento.',
   `pontos` int(10) UNSIGNED NOT NULL COMMENT 'Pontuação total que o jogador conseguiu ao longo do jogo, o tempo restante de uma pergunta será convertido em pontos.',
   `jogadores_id` int(10) UNSIGNED ZEROFILL NOT NULL COMMENT 'Identifica os jogadores.'
@@ -91,10 +91,10 @@ CREATE TABLE `perfis` (
 -- Fazendo dump de dados para tabela `perfis`
 --
 
-INSERT INTO `perfis` (`id`, `personagem`, `moedas`, `ponto_salvo`, `tempo_jogado`, `vida`, `pontos`, `jogadores_id`) VALUES
-(0000000001, 1, 10, 1, '02:00:00', 3, 0, 0000000002),
-(0000000002, 1, 10, 1, '01:00:00', 3, 0, 0000000001),
-(0000000003, 2, 20, 1, '03:00:00', 3, 0, 0000000003);
+INSERT INTO `perfis` (`id`, `personagem`, `moedas`, `ponto_salvo`, `score`, `vida`, `pontos`, `jogadores_id`) VALUES
+(0000000001, 1, 45, 1, 10, 3, 0, 0000000002),
+(0000000002, 1, 10, 1, 40, 3, 0, 0000000001),
+(0000000003, 2, 20, 1, 10, 3, 0, 0000000003);
 
 -- --------------------------------------------------------
 
@@ -133,8 +133,6 @@ CREATE TABLE `perguntas_has_perfis` (
   `resposta` tinyint(1) UNSIGNED NOT NULL COMMENT 'Armazena a resposta na qual o usuário obteve para responder.\n',
   `tempo_jogado` time NOT NULL COMMENT 'Armazena o tempo total na qual o usuário obteve para responder.\n'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Tabela destinada a armazenar as respostas que o jogador dá e o tempo jogado. ';
-
--- --------------------------------------------------------
 
 --
 -- Índices de tabelas apagadas
