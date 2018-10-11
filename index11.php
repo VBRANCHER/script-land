@@ -22,6 +22,7 @@ include_once("includes/verifica_logado.php");
 	<script src="js/loja.js"></script>
 	<script src="js/vilao1/vitoria.js"></script>
 	<script src="js/vilao2/vitoria2.js"></script>
+	<script src="js/vilao3/vitoria3.js"></script>
     <script src="js/vilao1/teste.js"></script>
     <script src="js/vilao1/teste2.js"></script>
     <script src="js/vilao1/teste3.js"></script>
@@ -33,7 +34,6 @@ include_once("includes/verifica_logado.php");
 	<script src="js/vilao3/teste9.js"></script>
 	<script src="js/vilao3/teste10.js"></script>
 	<script src="js/vilao3/teste11.js"></script>
-    <script src="js/vilao3/vitoria3.js"></script>
     <script src="js/spawn.js"></script>
 	<script src="js/rio_legal_2.js"></script>
 	<script src="js/lago_legal.js"></script>
@@ -42,7 +42,9 @@ include_once("includes/verifica_logado.php");
 	<script src="js/tutorial.js"></script>
 	<script src="js/salvar.js"></script>
 	<script src="js/loja_dentro.js"></script>
-	<script src="js/game_over.js"></script>
+	<script src="js/vilao1/game_over.js"></script>
+	<script src="js/vilao2/game_over2.js"></script>
+	<script src="js/vilao3/game_over3.js"></script>
 	<script src="js/selecionaPersonagem.js"></script>
 	
     <style type="text/css">
@@ -102,7 +104,7 @@ var config = {
 	
 	scene: [selecionaPersonagem, tutorial, lojaObj, spawnObj, testeObj, testeObj2, testeObj3,
 	testeObj4, testeObj5, testeObj6, testeObj7, testeObj8, testeObj9, testeObj10, testeObj11, vitoria, vitoria2, vitoria3, 
-	loja_dentro, game_over, arvores_legais, rio_legal, rio_legal_2, lago_legalObj, salvar, lugar_legalObj]
+	loja_dentro, game_over, game_over2, game_over3, arvores_legais, rio_legal, rio_legal_2, lago_legalObj, salvar, lugar_legalObj]
 	
 };
 var game = new Phaser.Game(config);
