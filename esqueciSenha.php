@@ -23,7 +23,7 @@ function openHome(){
 
 <div style="margin: 0 auto;">
 
-<img class="mb-4" src="imgs/LogoFinal.png" alt="" height="72">
+<img class="mb-4" src="assets/LogoFinal.png" alt="" height="72">
 
 <form class="form-signin" method="post" action="index.php">
 
@@ -31,7 +31,7 @@ function openHome(){
 	<h1 class="h3 mb-3 font-weight-normal" style="color:white">Para que você possa recuperar a sua senha digite o seu endereço de E-mail</h1>
     <input type="email" id="inputEmail" name="email" class="form-withoutborder" placeholder="E-mail" required autofocus><br>
     <button class="btn btn-lg btn-outline-success btn-block" type="submit">Enviar</button>
-	<button onclick="openHome()" class="btn btn-lg btn-outline-danger btn-block" type="button">Cancelar</button>
+	<button onclick="openHome()" class="btn btn-lg btn-outline-danger btn-block" type="button">Voltar</button>
 	
 </form>
 
