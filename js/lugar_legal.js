@@ -6,6 +6,7 @@ class lugar_legal extends Phaser.Scene {
 		var player;
 		var cursors;
 		var score = 0;
+		
 	}
 	
 	preload ()
@@ -119,6 +120,12 @@ class lugar_legal extends Phaser.Scene {
 			});
 
 			this.anims.create({
+				key: 'up',
+				frames: [ { key: 'protagonista_2', frame: 9 } ],
+				frameRate: 20
+			});
+			
+			this.anims.create({
 				key: 'right',
 				frames: this.anims.generateFrameNumbers('protagonista_2', { start: 5, end: 8 }),
 				frameRate: 10,
@@ -176,30 +183,34 @@ class lugar_legal extends Phaser.Scene {
 			this.player.setVelocityX(-200);
 			this.player.setVelocityY(0);
 			this.player.anims.play('left', true);
+			
 		}
 		else if (this.cursors.right.isDown)
 		{
 			this.player.setVelocityX(200);
 			this.player.setVelocityY(0);
 			this.player.anims.play('right', true);
+			
 		}
 		else if (this.cursors.up.isDown)
 		{
 			this.player.setVelocityY(-200);
 			this.player.setVelocityX(0);
-			this.player.anims.play('turn', true);
+			this.player.anims.play('up', true);
+	
 		}
 		else if (this.cursors.down.isDown)
 		{
 			this.player.setVelocityY(200);
 			this.player.setVelocityX(0);
 			this.player.anims.play('turn', true);
+		
 		}
 		else
 		{
 			this.player.setVelocityX(0);
 			this.player.setVelocityY(0);
-			this.player.anims.play('turn');
+			
 		}
 		
 	}
