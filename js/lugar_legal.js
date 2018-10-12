@@ -92,6 +92,12 @@ class lugar_legal extends Phaser.Scene {
 				frames: [ { key: 'protagonista_1', frame: 4 } ],
 				frameRate: 20
 			});
+			
+			this.anims.create({
+				key: 'up',
+				frames: [ { key: 'protagonista_1', frame: 9 } ],
+				frameRate: 20
+			});
 
 			this.anims.create({
 				key: 'right',
