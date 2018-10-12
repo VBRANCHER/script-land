@@ -11,7 +11,9 @@ class rio_legal extends Phaser.Scene {
     preload ()
 	{
 		
-        this.load.image('rio_legal', 'assets/rio_legal.png');
+		this.load.image('rio_legal', 'assets/rio_legal.png');
+		this.load.image('hitbox_rio_legal', 'assets/hitbox_rio_legal.png');
+		this.load.image('hitbox_rio_legal', 'assets/hitbox_rio_legal.png');
 		this.load.image('para_arvores_legais_2', 'assets/para_arvores_legais_2.png');
 		this.load.image('para_rio_legal_2', 'assets/para_rio_legal_2.png');
 		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 22, frameHeight: 31 });
@@ -47,6 +49,17 @@ class rio_legal extends Phaser.Scene {
 		
 		this.physics.add.overlap(this.player, this.para_rio_legal_2, this.entrarRio_legal_2, null, this);
 		
+		this.hitbox_rio_legal = this.physics.add.staticGroup();
+		
+		this.hitbox_rio_legal.create(600, 592, 'hitbox_rio_legal');
+		
+		this.physics.add.collider(this.player, this.hitbox_rio_legal);
+
+		this.hitbox_rio_legal = this.physics.add.staticGroup();
+		
+		this.hitbox_rio_legal.create(600, 400, 'hitbox_rio_legal');
+		
+		this.physics.add.collider(this.player, this.hitbox_rio_legal);
     }
 
     entrarArvores_legais_2(player, para_arvores_legais_2) {
