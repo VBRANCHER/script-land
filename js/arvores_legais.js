@@ -6,7 +6,7 @@ class arvores_legais extends Phaser.Scene {
 		var cursors;
 		var gameOver = false;
 		var score = 0;
-		
+		var posicao = 0;
     }
     preload ()
 	{
@@ -118,30 +118,49 @@ class arvores_legais extends Phaser.Scene {
 			this.player.setVelocityX(-200);
 			this.player.setVelocityY(0);
 			this.player.anims.play('left', true);
+			this.posicao = 2;
+			
 		}
 		else if (this.cursors.right.isDown)
 		{
 			this.player.setVelocityX(200);
 			this.player.setVelocityY(0);
 			this.player.anims.play('right', true);
+			this.posicao = 3;
+			
 		}
 		else if (this.cursors.up.isDown)
 		{
 			this.player.setVelocityY(-200);
 			this.player.setVelocityX(0);
-			this.player.anims.play('turn', true);
+			this.player.anims.play('up', true);
+			this.posicao = 1;
+	
 		}
 		else if (this.cursors.down.isDown)
 		{
 			this.player.setVelocityY(200);
 			this.player.setVelocityX(0);
 			this.player.anims.play('turn', true);
+			this.posicao = 0;
+			
 		}
 		else
 		{
 			this.player.setVelocityX(0);
 			this.player.setVelocityY(0);
-			this.player.anims.play('turn');
+			if (this.posicao == 0){
+				this.player.anims.play('turn', true);
+			}
+			else if (this.posicao == 1){
+				this.player.anims.play('up', true);
+			}
+			else if (this.posicao == 2){
+				this.player.anims.play('leftStop', true);
+			}
+			else if (this.posicao == 3){
+				this.player.anims.play('rightStop', true);
+			}
 		}
 		
 	}

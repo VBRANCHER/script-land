@@ -8,6 +8,7 @@ class loja extends Phaser.Scene {
 		var gameOver = false;
 		var score = 0;
 		var npc;
+		var posicao = 0;
 	}
 	
 	preload ()
@@ -125,27 +126,6 @@ class loja extends Phaser.Scene {
 		
 		this.physics.add.overlap(this.player, this.npc, this.interagirVilao, null, this);
 
-		// Animações do jogador
-		this.anims.create({
-			key: 'left',
-			frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 3 }),
-			frameRate: 10,
-			repeat: -1
-		});
-
-		this.anims.create({
-			key: 'turn',
-			frames: [ { key: 'dude', frame: 4 } ],
-			frameRate: 20
-		});
-
-		this.anims.create({
-			key: 'right',
-			frames: this.anims.generateFrameNumbers('dude', { start: 5, end: 8 }),
-			frameRate: 10,
-			repeat: -1
-		});
-
 		//  Eventos do teclado
 		
 		this.cursors = this.input.keyboard.createCursorKeys();
@@ -210,30 +190,49 @@ class loja extends Phaser.Scene {
 			this.player.setVelocityX(-200);
 			this.player.setVelocityY(0);
 			this.player.anims.play('left', true);
+			this.posicao = 2;
+			
 		}
 		else if (this.cursors.right.isDown)
 		{
 			this.player.setVelocityX(200);
 			this.player.setVelocityY(0);
 			this.player.anims.play('right', true);
+			this.posicao = 3;
+			
 		}
 		else if (this.cursors.up.isDown)
 		{
 			this.player.setVelocityY(-200);
 			this.player.setVelocityX(0);
-			this.player.anims.play('turn', true);
+			this.player.anims.play('up', true);
+			this.posicao = 1;
+	
 		}
 		else if (this.cursors.down.isDown)
 		{
 			this.player.setVelocityY(200);
 			this.player.setVelocityX(0);
 			this.player.anims.play('turn', true);
+			this.posicao = 0;
+			
 		}
 		else
 		{
 			this.player.setVelocityX(0);
 			this.player.setVelocityY(0);
-			this.player.anims.play('turn');
+			if (this.posicao == 0){
+				this.player.anims.play('turn', true);
+			}
+			else if (this.posicao == 1){
+				this.player.anims.play('up', true);
+			}
+			else if (this.posicao == 2){
+				this.player.anims.play('leftStop', true);
+			}
+			else if (this.posicao == 3){
+				this.player.anims.play('rightStop', true);
+			}
 		}
 		
 	}

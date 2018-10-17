@@ -6,6 +6,7 @@ class lugar_legal extends Phaser.Scene {
 		var player;
 		var cursors;
 		var score = 0;
+		var posicao = 0;
 		
 	}
 	
@@ -79,18 +80,18 @@ class lugar_legal extends Phaser.Scene {
 		// Animações do personagem 1
 		
 		if (personagem == 1){
-		
-			this.anims.create({
-				key: 'left',
-				frames: this.anims.generateFrameNumbers('protagonista_1', { start: 0, end: 3 }),
-				frameRate: 10,
-				repeat: -1
-			});
 
 			this.anims.create({
 				key: 'turn',
 				frames: [ { key: 'protagonista_1', frame: 4 } ],
 				frameRate: 20
+			});
+			
+			this.anims.create({
+				key: 'left',
+				frames: this.anims.generateFrameNumbers('protagonista_1', { start: 0, end: 3 }),
+				frameRate: 10,
+				repeat: -1
 			});
 			
 			this.anims.create({
@@ -106,6 +107,17 @@ class lugar_legal extends Phaser.Scene {
 				repeat: -1
 			});
 			
+			this.anims.create({
+				key: 'rightStop',
+				frames: [ { key: 'protagonista_1', frame: 6 } ],
+				frameRate: 20
+			});
+			
+			this.anims.create({
+				key: 'leftStop',
+				frames: [ { key: 'protagonista_1', frame: 0 } ],
+				frameRate: 20
+			});
 		}
 		
 		// Animações do personagem 2
@@ -137,8 +149,22 @@ class lugar_legal extends Phaser.Scene {
 				frameRate: 10,
 				repeat: -1
 			});
+			
+			this.anims.create({
+				key: 'rightStop',
+				frames: [ { key: 'protagonista_2', frame: 7 } ],
+				frameRate: 20
+			});
+			
+			this.anims.create({
+				key: 'leftStop',
+				frames: [ { key: 'protagonista_2', frame: 0 } ],
+				frameRate: 20
+			});
 
 		}
+		
+		this.player.anims.play('turn', true);
 		
 		// Próxima Área
 		
@@ -189,6 +215,7 @@ class lugar_legal extends Phaser.Scene {
 			this.player.setVelocityX(-200);
 			this.player.setVelocityY(0);
 			this.player.anims.play('left', true);
+			this.posicao = 2;
 			
 		}
 		else if (this.cursors.right.isDown)
@@ -196,6 +223,7 @@ class lugar_legal extends Phaser.Scene {
 			this.player.setVelocityX(200);
 			this.player.setVelocityY(0);
 			this.player.anims.play('right', true);
+			this.posicao = 3;
 			
 		}
 		else if (this.cursors.up.isDown)
@@ -203,6 +231,7 @@ class lugar_legal extends Phaser.Scene {
 			this.player.setVelocityY(-200);
 			this.player.setVelocityX(0);
 			this.player.anims.play('up', true);
+			this.posicao = 1;
 	
 		}
 		else if (this.cursors.down.isDown)
@@ -210,13 +239,25 @@ class lugar_legal extends Phaser.Scene {
 			this.player.setVelocityY(200);
 			this.player.setVelocityX(0);
 			this.player.anims.play('turn', true);
-		
+			this.posicao = 0;
+			
 		}
 		else
 		{
 			this.player.setVelocityX(0);
 			this.player.setVelocityY(0);
-			
+			if (this.posicao == 0){
+				this.player.anims.play('turn', true);
+			}
+			else if (this.posicao == 1){
+				this.player.anims.play('up', true);
+			}
+			else if (this.posicao == 2){
+				this.player.anims.play('leftStop', true);
+			}
+			else if (this.posicao == 3){
+				this.player.anims.play('rightStop', true);
+			}
 		}
 		
 	}
