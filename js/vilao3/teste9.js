@@ -13,7 +13,7 @@ class teste9 extends Phaser.Scene {
 		this.load.image('buttonErrado', 'assets/vilao3/buttonErrado.png');
 		this.load.image('Protagonista1', 'assets/Protagonista1.png');
 		this.load.image('Protagonista2', 'assets/Protagonista2.png');
-		this.load.image('Vilão1', 'assets/Vilão1.png');
+		this.load.image('Vilão3', 'assets/Vilão3.png');
 	}
 
 	create ()
@@ -30,7 +30,7 @@ class teste9 extends Phaser.Scene {
 			this.add.image(180, 500, 'Protagonista2');
 		}
 		
-		this.add.image(1100, 500, 'Vilão1');
+		this.add.image(1100, 500, 'Vilão3');
 		
 		this.vidasText = this.add.text(10, 48, 'Vidas: ' + vidasRestantes, { font: '32px Arial', fill: '#000000' });
 		
