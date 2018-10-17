@@ -14,6 +14,7 @@ class lago_legal extends Phaser.Scene {
 		
 		this.load.image('lago_legal', 'assets/lago_legal.png');
 		this.load.image('para_rio_legal_22', 'assets/para_rio_legal_22.png');
+		this.load.image('moeda', 'assets/moeda.png');
 		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 22, frameHeight: 31 });
 		this.load.spritesheet('protagonista_1', 'assets/protagonista_1.png', { frameWidth: 22, frameHeight: 31 });
 		this.load.image('npc3', 'assets/npc3.png');
@@ -30,7 +31,11 @@ class lago_legal extends Phaser.Scene {
 		this.player.setCollideWorldBounds(true);
 		this.player.setPosition(380,650);
 	
+		//Moedas
 
+		this.moedas = this.physics.add.sprite(415, 400, 'moeda');
+		
+		this.physics.add.overlap(this.player, this.moedas, this.coletaMoedas, null, this);
 		
 		
 		//Vilão	
@@ -63,6 +68,14 @@ class lago_legal extends Phaser.Scene {
 		player.setPosition(405,625);
 	}
 	
+	coletaMoedas(){
+		if (lago_legalObj.moedas.visible == true){
+			lago_legalObj.moedas.setVisible(false);
+			totalMoedas = totalMoedas + 10;
+			carregarMoeda();
+		}
+	}
+
 	update ()
 	{	
 		

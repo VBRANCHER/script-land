@@ -22,6 +22,7 @@ class loja extends Phaser.Scene {
 		this.load.image('hitbox6', 'assets/hitbox6.png');
 		this.load.image('hitbox7', 'assets/hitbox7.png');
 		this.load.image('loja', 'assets/loja.png');
+		this.load.image('moeda', 'assets/moeda.png');
 		this.load.image('para_lugar_legal', 'assets/para_lugar_legal.png');
 		this.load.image('para_arvores_legais', 'assets/para_arvores_legais.png');
 		this.load.image('npc', 'assets/npc.png');
@@ -44,6 +45,12 @@ class loja extends Phaser.Scene {
 		
 		this.player.setBounce(0);
 		this.player.setCollideWorldBounds(true);
+
+		//Moedas
+
+		this.moedas = this.physics.add.sprite(920, 490, 'moeda');
+		
+		this.physics.add.overlap(this.player, this.moedas, this.coletaMoedas, null, this);
 
 		 //  The score
 		//this.scoreText = this.add.text(970, 9, '0', { fontSize: '32px', fill: '#fff' });
@@ -183,6 +190,14 @@ class loja extends Phaser.Scene {
 		
 	}
 	
+	coletaMoedas(){
+		if (lojaObj.moedas.visible == true){
+			lojaObj.moedas.setVisible(false);
+			totalMoedas = totalMoedas + 10;
+			carregarMoeda();
+		}
+	}
+
 	update ()
 	{	
 	

@@ -15,6 +15,7 @@ class spawn extends Phaser.Scene {
 		this.load.image('spawn', 'assets/spawn.png');
 		this.load.image('hitbox_spawn1', 'assets/hitbox_spawn1.png');
 		this.load.image('hitbox_spawn2', 'assets/hitbox_spawn2.png');
+		this.load.image('moeda', 'assets/moeda.png');
 		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 22, frameHeight: 31 });
 		this.load.image('npc2', 'assets/npc2.png');
 		this.load.image('arvore1', 'assets/arvore1.png');
@@ -35,6 +36,12 @@ class spawn extends Phaser.Scene {
 		//  The score
 		//this.scoreText = this.add.text(970, 9, '0', { fontSize: '32px', fill: '#fff' });
 		
+		//Moedas
+
+		this.moedas = this.physics.add.sprite(795, 350, 'moeda');
+		
+		this.physics.add.overlap(this.player, this.moedas, this.coletaMoedas, null, this);
+
 		// Hitboxes
 		
 		this.hitbox_spawn1 = this.physics.add.staticGroup();
@@ -88,6 +95,13 @@ class spawn extends Phaser.Scene {
 		
 	}
 
+	coletaMoedas(){
+		if (spawnObj.moedas.visible == true){
+			spawnObj.moedas.setVisible(false);
+			totalMoedas = totalMoedas + 10;
+			carregarMoeda();
+		}
+	}
 
 	
 	update ()
