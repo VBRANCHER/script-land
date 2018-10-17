@@ -14,6 +14,9 @@ class lago_legal extends Phaser.Scene {
 	{
 		
 		this.load.image('lago_legal', 'assets/lago_legal.png');
+		this.load.image('hitbox_lago_legal', 'assets/hitbox_lago_legal.png');
+		this.load.image('hitbox_lago_legal', 'assets/hitbox_lago_legal.png');
+		this.load.image('hitbox_lago_legal2', 'assets/hitbox_lago_legal2.png');
 		this.load.image('para_rio_legal_22', 'assets/para_rio_legal_22.png');
 		this.load.image('moeda', 'assets/moeda.png');
 		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 22, frameHeight: 31 });
@@ -54,11 +57,29 @@ class lago_legal extends Phaser.Scene {
 		
 		this.physics.add.overlap(this.player, this.para_rio_legal_22, this.entrarRio_legal_22, null, this);
 		
+		this.hitbox_lago_legal = this.physics.add.staticGroup();
+		
+		this.hitbox_lago_legal.create(500, 465, 'hitbox_lago_legal');
+		
+		this.physics.add.collider(this.player, this.hitbox_lago_legal);
+
+		
+		this.hitbox_lago_legal = this.physics.add.staticGroup();
+		
+		this.hitbox_lago_legal.create(330, 465, 'hitbox_lago_legal');
+		
+		this.physics.add.collider(this.player, this.hitbox_lago_legal);
+
+		this.hitbox_lago_legal2 = this.physics.add.staticGroup();
+		
+		this.hitbox_lago_legal2.create(415, 185, 'hitbox_lago_legal2');
+		
+		this.physics.add.collider(this.player, this.hitbox_lago_legal2);
 	}
 	
 	interagirVilao(player, npc3){
 		if (john == 0){
-			player.setPosition(415,340);
+			player.setPosition(400,340);
 			game.scene.switch('lago_legal','teste8');
 		}
 	}
