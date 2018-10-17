@@ -109,7 +109,7 @@ class lugar_legal extends Phaser.Scene {
 			
 			this.anims.create({
 				key: 'rightStop',
-				frames: [ { key: 'protagonista_1', frame: 6 } ],
+				frames: [ { key: 'protagonista_1', frame: 7 } ],
 				frameRate: 20
 			});
 			
@@ -125,18 +125,18 @@ class lugar_legal extends Phaser.Scene {
 		if (personagem == 2) {
 		
 			this.anims.create({
+				key: 'turn',
+				frames: [ { key: 'protagonista_2', frame: 4 } ],
+				frameRate: 20
+			});
+			
+			this.anims.create({
 				key: 'left',
 				frames: this.anims.generateFrameNumbers('protagonista_2', { start: 0, end: 3 }),
 				frameRate: 10,
 				repeat: -1
 			});
-
-			this.anims.create({
-				key: 'turn',
-				frames: [ { key: 'protagonista_2', frame: 4 } ],
-				frameRate: 20
-			});
-
+			
 			this.anims.create({
 				key: 'up',
 				frames: [ { key: 'protagonista_2', frame: 9 } ],
