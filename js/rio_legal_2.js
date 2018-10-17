@@ -6,12 +6,14 @@ class rio_legal_2 extends Phaser.Scene {
 		var cursors;
 		var gameOver = false;
 		var score = 0;
-		var posicao = 0;
+		
     }
     preload ()
 	{
 		
 		this.load.image('rio_legal_2', 'assets/rio_legal_2.png');
+		this.load.image('hitbox_rio_legal_2', 'assets/hitbox_rio_legal_2.png');
+		this.load.image('hitbox_rio_legal_2', 'assets/hitbox_rio_legal_2.png');
 		this.load.image('para_lago_legal', 'assets/para_lago_legal.png');
 		this.load.image('para_rio_legal2', 'assets/para_rio_legal2.png');
 		this.load.spritesheet('protagonista_2', 'assets/protagonista_2.png', { frameWidth: 22, frameHeight: 31 });
@@ -47,6 +49,17 @@ class rio_legal_2 extends Phaser.Scene {
 		
 		this.physics.add.overlap(this.player, this.para_rio_legal2, this.entrarRio_legal2, null, this);
 
+		this.hitbox_rio_legal_2 = this.physics.add.staticGroup();
+		
+		this.hitbox_rio_legal_2.create(875, 605, 'hitbox_rio_legal_2');
+		
+		this.physics.add.collider(this.player, this.hitbox_rio_legal_2);
+
+		this.hitbox_rio_legal_2 = this.physics.add.staticGroup();
+		
+		this.hitbox_rio_legal_2.create(1050, 410, 'hitbox_rio_legal_2');
+		
+		this.physics.add.collider(this.player, this.hitbox_rio_legal_2);
 	}
 	
 	entrarRio_legal2(player, para_rio_legal) {
@@ -69,49 +82,30 @@ class rio_legal_2 extends Phaser.Scene {
 			this.player.setVelocityX(-200);
 			this.player.setVelocityY(0);
 			this.player.anims.play('left', true);
-			this.posicao = 2;
-			
 		}
 		else if (this.cursors.right.isDown)
 		{
 			this.player.setVelocityX(200);
 			this.player.setVelocityY(0);
 			this.player.anims.play('right', true);
-			this.posicao = 3;
-			
 		}
 		else if (this.cursors.up.isDown)
 		{
 			this.player.setVelocityY(-200);
 			this.player.setVelocityX(0);
-			this.player.anims.play('up', true);
-			this.posicao = 1;
-	
+			this.player.anims.play('turn', true);
 		}
 		else if (this.cursors.down.isDown)
 		{
 			this.player.setVelocityY(200);
 			this.player.setVelocityX(0);
 			this.player.anims.play('turn', true);
-			this.posicao = 0;
-			
 		}
 		else
 		{
 			this.player.setVelocityX(0);
 			this.player.setVelocityY(0);
-			if (this.posicao == 0){
-				this.player.anims.play('turn', true);
-			}
-			else if (this.posicao == 1){
-				this.player.anims.play('up', true);
-			}
-			else if (this.posicao == 2){
-				this.player.anims.play('leftStop', true);
-			}
-			else if (this.posicao == 3){
-				this.player.anims.play('rightStop', true);
-			}
+			this.player.anims.play('turn');
 		}
 		
 	}
