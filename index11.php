@@ -67,7 +67,7 @@ include_once("includes/verifica_logado.php");
 <script type="text/javascript">
 
 var jean = 0;
-var juliana = 0;
+var juju = 0;
 var john = 0;
 var personagem = 0;
 var totalMoedas = <?php echo $_SESSION["arrProgresso"]["moedas"] ?>;
