@@ -12,8 +12,10 @@ if(isset($_POST["inputEmail"])){
 		
 	}
 	else{
-		print_r("oi");
+	
 		$_SESSION["arrUsuario"] = $arr[0];
+		$_SESSION["arrProgresso"] = select("SELECT * FROM perfis WHERE jogadores_id='{$_SESSION['arrUsuario']["id"]}'")[0];
+		
 	}
 }
 
