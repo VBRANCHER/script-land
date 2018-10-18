@@ -25,7 +25,7 @@ include_once("includes/verifica_login.php");
 	function openCadastro(){
 	
 		document.location.href = "cadastro.php";
-	
+		
 	}
 	
 	function openPassword(){
@@ -57,6 +57,9 @@ include_once("includes/verifica_login.php");
 	<button onclick="openCadastro()" class="btn btn-lg btn-outline-info btn-block" type="button">Cadastrar</button>
 	
 	<button onclick="openPassword()" class="btn btn-lg btn-outline-danger btn-block" type="button">Esqueci minha senha</button>
+	<br>
+	
+	<a style="color:white"> Compartilhe com seus amigos! </a>
 	<br>
 	<br>
 	<iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fsenaichallenge.tk%2Fscriptland%2F&layout=button_count&size=large&mobile_iframe=true&width=129&height=28&appId" width="129" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>

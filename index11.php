@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once("includes/verifica_logado.php"); 
+
 ?>
 
 <html> 
@@ -66,15 +67,15 @@ include_once("includes/verifica_logado.php");
 <script type="text/javascript">
 
 var jean = 0;
-var juju = 0;
+var juliana = 0;
 var john = 0;
 var personagem = 0;
-var totalMoedas = 0;
+var totalMoedas = <?php echo $_SESSION["arrProgresso"]["moedas"] ?>;
 var pularPergunta = 0;
 var segundaChance = 0;
 var bomba = 0;
-var vidasRestantes = 3;
-var score = 0;
+var vidasRestantes = <?php echo $_SESSION["arrProgresso"]["vida"] ?>;
+var score = <?php echo $_SESSION["arrProgresso"]["pontos"] ?>;
 var testeObj = new teste();
 var testeObj2 = new teste2();
 var testeObj3 = new teste3();

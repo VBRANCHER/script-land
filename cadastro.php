@@ -25,6 +25,25 @@ include_once("includes/verifica_login.php");
 	
 	}
 	
+	function verificaSenhas(){
+
+		var senha1 = document.getElementById('senha').value;
+		var senhaConfirmar = document.getElementById('senhaConfirma').value;
+		if (senha1 == senhaConfirmar){
+			
+			return true;
+			
+		}
+			
+		else{
+			
+			alert('As senhas estão diferentes!');
+			return false;
+			
+		}
+	
+	}
+	
 	</script>
 </head>
 
@@ -36,7 +55,7 @@ include_once("includes/verifica_login.php");
 	
 		<h1 class="h3 mb-3 font-weight-normal" style="color:#ffffff"> Cadastrar </h1>
 	
-		<form class="form-signin" method="post" action="cadastro.php">
+		<form class="form-signin" method="post" action="cadastro.php" onsubmit="return verificaSenhas()">
 	
 			<input type="email" name="email" class="form-withoutborder" placeholder="E-mail"  required autofocus>
 
@@ -44,42 +63,15 @@ include_once("includes/verifica_login.php");
 			
 			<input type="text" name="nomeusu" class="form-withoutborder" placeholder="Nome de Usuário"  required>
 
-			<input type="password" name="senha" class="form-withoutborder" style="margin-bottom:0px" placeholder="Senha"  required>
+			<input type="password" name="senha" id="senha" class="form-withoutborder" style="margin-bottom:0px" placeholder="Senha"  required>
 
-			<input type="password" name="senha" class="form-withoutborder" placeholder="Confirmar senha"  required>
+			<input type="password" name="senhaConfirma" id="senhaConfirma" class="form-withoutborder" placeholder="Confirmar senha"  required>
 	
-			<button type="submit" class="btn btn-lg btn-outline-success btn-block" data-toggle="modal" data-target="#exampleModalCenter"> Cadastrar </button> 
+			<button type="submit" class="btn btn-lg btn-outline-success btn-block"> Cadastrar </button> 
 	
 			<button onclick="openHome()" type="button" class="btn btn-lg btn-outline-danger btn-block"> Voltar </button>
 	
 		</form>
-	
 	</div>
-	
-	<div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLongTitle">Cadastrado com sucesso!</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				
-				<center>
-				
-					Teste
-				
-				</center>
-				
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" href="index.php" data-dismiss="modal">Logar</button>
-				<button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-			</div>
-		</div>
-	</div>
-</div>
 </body>
 </html>
